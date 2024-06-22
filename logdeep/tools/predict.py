@@ -70,7 +70,7 @@ class Predicter():
                 for i in range(len(line) - self.window_size):
                     seq0 = line[i:i + self.window_size]
                     label = line[i + self.window_size]
-                    seq1 = [0] * 676
+                    seq1 = [0] * 676        #[1,2,3,2,3]=>{1:1,2:2,3:2}
                     log_conuter = Counter(seq0)
                     for key in log_conuter:
                         seq1[key] = log_conuter[key]

@@ -7,12 +7,12 @@ E5,Starting <*>,338
 E6,Reached target <*>,314
 E7,Starting Exit the Session...,58
 E8,Received <*> from PID <*> <*>,69
-E9,[system] Activating via systemd: service <*> <*>,542
-E10,[system] Successfully activated service <*>,564
+E9,system] Activating via systemd: service <*> <*>,542
+E10,system] Successfully activated service <*>,564
 E11,Launching FprintObject,247
-E12,** Message: D-Bus service launched with name: net.reactivated.Fprint,247
-E13,** Message: entering main loop,247
-E14,"** Message: No devices in use, exit",246
+E12,Message: D-Bus service launched with name: net.reactivated.Fprint,247
+E13,Message: entering main loop,247
+E14,"Message: No devices in use, exit",246
 E15,DHCPREQUEST on eno16777984 to <*> port 67 <*>,250
 E16,DHCPACK from <*> <*>,248
 E17,<info> (eno16777984): DHCPv4 state changed <*> -> <*>,311
@@ -33,21 +33,21 @@ E31,元数据缓存近期已刷新。,30
 E32,Time has been changed,114
 E33,search-file transaction <*> from uid <*> finished with success after <*>,63
 E34,Startup finished in <*>,64
-E35,[ <*> hpet1: lost <*> rtc interrupts,9
+E35,<*> hpet1: lost <*> rtc interrupts,19
 E36,hpet1: lost <*> rtc interrupts,47
 E37,Successfully made thread <*> of process <*> <*> owned by '1000' high priority at nice level -11.,39
 E38,Process <*> (caja) of user 1000 dumped core.,11
-E39,[ 8125.201002] capability: warning: `VirtualBox' uses 32-bit capabilities (legacy support in use),1
+E39,8125.201002] capability: warning: `VirtualBox' uses 32-bit capabilities (legacy support in use),1
 E40,capability: warning: `VirtualBox' uses 32-bit capabilities (legacy support in use),1
-E41,"[10599.166671] nf_conntrack version 0.5.0 (65536 buckets, 262144 max)",1
+E41,"10599.166671] nf_conntrack version 0.5.0 (65536 buckets, 262144 max)",1
 E42,"nf_conntrack version 0.5.0 (65536 buckets, 262144 max)",1
-E43,[10599.225649] ip6_tables: (C) 2000-2006 Netfilter Core Team,1
+E43,<*> <*> (C) 2000-2006 Netfilter Core Team,6
 E44,ip6_tables: (C) 2000-2006 Netfilter Core Team,1
-E45,[10599.356548] Ebtables v2.0 registered,1
+E45,10599.356548] Ebtables v2.0 registered,1
 E46,Ebtables v2.0 registered,1
-E47,[10599.417954] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.,1
+E47,10599.417954] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.,1
 E48,bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.,1
-E49,[10739.683652] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon. Use the iptables CT target to attach helpers instead.,1
+E49,10739.683652] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon. Use the iptables CT target to attach helpers instead.,1
 E50,nf_conntrack: automatic helper assignment is deprecated and it will be removed soon. Use the iptables CT target to attach helpers instead.,1
 E51,Unknown serialization item 'subscribed=:1.1',4
 E52,<*> will expire after <*> seconds.,68
@@ -57,7 +57,7 @@ E55,not found <*> for: NeoKylin 5.0,42
 E56,not found <*> for: NeoKylin 5.0 Updates 32-bit,42
 E57,元数据缓存已建立。,21
 E58,tp-glib-Message: Exiting,1
-E59,** (evolution-source-registry:6933): WARNING **: secret_service_search_sync: must specify at least one attribute to match,1
+E59,(evolution-source-registry:6933): WARNING **: secret_service_search_sync: must specify at least one attribute to match,1
 E60,<info> (eno16777984): device state change: <*> -> <*> (reason <*> <*> <*> <*>,454
 E61,<info> NetworkManager state is now <*>,257
 E62,<warn> Activation (eno16777984) failed for connection 'eno16777984',6
@@ -70,7 +70,7 @@ E68,<warn> (pid <*> unhandled DHCP event for interface eno16777984,6
 E69,<info> <*> connection <*>,68
 E70,<info> Activation (eno16777984) <*> <*> <*>,112
 E71,<info> Activation (eno16777984) Stage <*> of 5 <*> <*> <*>,509
-E72,** (process:2158): WARNING **: Couldn't create directory monitor on smb://x-gnome-default-workgroup/. Error: 指定的位置未挂载,14
+E72,(process:2158): WARNING **: Couldn't create directory monitor on smb://x-gnome-default-workgroup/. Error: 指定的位置未挂载,14
 E73,<info> Activation (eno16777984) Stage <*> of 5 <*> Configure <*> <*>,367
 E74,<info> Activation (eno16777984) Beginning DHCPv4 transaction (timeout in 45 seconds),57
 E75,<info> dhclient started with pid <*>,57
@@ -82,596 +82,617 @@ E80,<info> Policy set 'eno16777984' (eno16777984) as default for IPv4 routing an
 E81,Unit iscsi.service cannot be reloaded because it is inactive.,45
 E82,vmxnet3 0000:03:00.0 eno16777984: NIC Link is Down,36
 E83,<info> (eno16777984): link disconnected (deferring action for 1 seconds),36
-E84,<*> vmxnet3 0000:03:00.0 eno16777984: NIC Link is Down,10
+E84,<*> vmxnet3 0000:03:00.0 eno16777984: NIC Link is Down,17
 E85,<info> (eno16777984): link disconnected (calling deferred action),36
-E86,<*> vmxnet3 0000:03:00.0 eno16777984: NIC Link is Up 10000 Mbps,11
+E86,<*> vmxnet3 0000:03:00.0 <*> NIC Link is Up 10000 Mbps,28
 E87,vmxnet3 0000:03:00.0 eno16777984: NIC Link is Up 10000 Mbps,51
 E88,<info> <*> link <*>,66
 E89,Invalid legacy unicast query packet.,112
 E90,Exiting...,2
-E91,[ 1717314354.633366]: GLib-GIO[977]: WARNING **: Error releasing name com.redhat.imsettings: The connection is closed,1
-E92,[ <*> GLib-GIO[977]: CRITICAL **: Error while sending AddMatch() message: The connection is closed,2
-E93,[ <*> <*> INFO: Unloading imesttings module: <*>,6
-E94,[ <*> <*> INFO: Stopping the main process for IBus [pid: <*>,2
+E91,1717314354.633366]: GLib-GIO[977]: WARNING **: Error releasing name com.redhat.imsettings: The connection is closed,1
+E92,<*> GLib-GIO[977]: CRITICAL **: Error while sending AddMatch() message: The connection is closed,2
+E93,<*> <*> INFO: Unloading imesttings module: <*>,6
+E94,<*> <*> INFO: Stopping the main process for IBus [pid: <*>,2
 E95,Terminating,6
 E96,obexd[2067]: Terminating,1
 E97,STATUS=daemon 'smbd' finished starting up and ready to serve connectionsFailed to delete pidfile /run/smbd.pid. Error was 没有那个文件或目录,1
-E98,"[origin software=""rsyslogd"" swVersion=""7.4.10"" <*> x-info=""http://www.rsyslog.com""] exiting on signal 15.",2
-E99,"[origin software=""rsyslogd"" swVersion=""7.4.10"" <*> x-info=""http://www.rsyslog.com""] start",5
-E100,[ <*> Initializing cgroup subsys <*>,60
-E101,[ 0.000000] Linux version 4.4.13-200.nd7.3.x86_64 (mockbuild@kojibuilder8) (gcc version 4.9.3 20150626 (NeoKylin 4.9.3-3) (GCC) ) #1 SMP Sat Jul 8 23:22:12 CST 2017,5
-E102,[ 0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-4.4.13-200.nd7.3.x86_64 root=/dev/nvme0n1p1 ro rhgb quiet loglevel=0 LANG=zh_CN.UTF-8,5
-E103,"[ 0.000000] x86/fpu: xstate_offset[2]: 576, xstate_sizes[2]: 256",5
-E104,[ 0.000000] x86/fpu: Supporting XSAVE feature 0x01: 'x87 floating point registers',5
-E105,[ 0.000000] x86/fpu: Supporting XSAVE feature <*> <*> registers',10
-E106,"[ 0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.",5
-E107,[ 0.000000] x86/fpu: Using 'eager' FPU context switches.,5
-E108,[ 0.000000] e820: BIOS-provided physical RAM map:,5
-E109,[ 0.000000] BIOS-e820: [mem <*> <*>,50
-E110,[ 0.000000] BIOS-e820: [mem <*> ACPI <*>,10
-E111,[ 0.000000] NX (Execute Disable) protection: active,5
-E112,[ 0.000000] SMBIOS 2.7 present.,5
-E113,[ 0.000000] Hypervisor detected: VMware,5
-E114,[ 0.000000] e820: last_pfn = <*> max_arch_pfn = 0x400000000,10
-E115,[ 0.000000] x86/PAT: Configuration [0-7]: WB WC UC- UC WB WC UC- WT,5
-E116,[ 0.000000] found SMP MP-table at [mem 0x000f6a70-0x000f6a7f] mapped at [ffff8800000f6a70],5
-E117,[ 0.000000] Using GB pages for direct mapping,5
-E118,[ 0.000000] <*> [mem <*>,20
-E119,[ 0.000000] ACPI: Early table checksum verification disabled,5
-E120,[ 0.000000] ACPI: RSDP 0x00000000000F6A00 000024 (v02 PTLTD ),5
-E121,[ 0.000000] ACPI: <*> <*> <*> <*> INTEL 440BX 06040000 <*> <*>,10
-E122,[ 0.000000] ACPI: <*> <*> <*> (v01 PTLTD <*> 06040000 <*> <*>,15
-E123,[ 0.000000] ACPI: FACS 0x00000000BFEFFFC0 000040,10
-E124,[ 0.000000] ACPI: APIC 0x00000000BFEDC872 000742 (v01 PTLTD ? APIC 06040000 LTP 00000000),5
-E125,[ 0.000000] ACPI: SRAT 0x00000000BFEDB72F 0008D0 (v02 VMWARE MEMPLUG 06040000 VMW 00000001),5
-E126,[ 0.000000] ACPI: <*> <*> <*> (v01 VMWARE VMW <*> 06040000 VMW 00000001),10
-E127,alsactl daemon stopped,5
-E128,[ <*> <*> APIC routing to physical <*>,10
-E129,[ 0.000000] SRAT: PXM 0 -> APIC <*> -> Node 0,640
-E130,Endpoint <*> sender=:1.33 <*>,12
-E131,"<info> Caught signal, shutting down...",5
-E132,[ 0.000000] SRAT: Node 0 PXM 0 [mem <*>,15
-E133,[ 0.000000] SRAT: Node 0 PXM 0 [mem 0x440000000-0x403fffffff] hotplug,5
-E134,[ 0.000000] NUMA: Node 0 [mem <*> + [mem <*> -> [mem <*>,10
-E135,[ 0.000000] <*> <*> [mem <*>,25
-E136,[ 0.000000] Zone ranges:,5
-E137,[ 0.000000] Movable zone start for each node,5
-E138,[ 0.000000] Early memory node ranges,5
-E139,[ 0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000043fffffff],5
-E140,[ 0.000000] ACPI: PM-Timer IO Port: 0x1008,5
-E141,[ 0.000000] ACPI: LAPIC_NMI <*> high edge lint[0x1]),640
-E142,"Got SIGTERM, quitting.",5
-E143,avahi-daemon 0.6.31 exiting.,5
-E144,<warn> error requesting auth for <*> (2) GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name :1.8 was not provided by any .service files,2
-E145,<info> ModemManager is shut down,5
-E146,<info> ModemManager disappeared from bus,5
-E147,<warn> disconnected by the system bus.,5
-E148,"g_dbus_connection_real_closed: Remote peer vanished with error: 接受信息出错：Connection reset by peer (g-io-error-quark, 0). Exiting.",1
-E149,"<*> main process exited, code=exited, <*>",18
-E150,Unit <*> entered failed state.,18
-E151,<*> failed.,18
-E152,Failed to get D-Bus connection,5
-E153,"g_dbus_connection_real_closed: Remote peer vanished with error: Underlying GIOStream returned 0 bytes on an async read (g-io-error-quark, 0). Exiting.",49
-E154,"<info> caught signal 15, shutting down normally.",5
-E155,<*> GLib-CRITICAL **: Source ID 33 was not found when attempting to remove it,5
-E156,<info> exiting (success),5
-E157,Shutting down iceventd: [ 确定 ],5
-E158,VBoxPciLinuxLinuxUnload,5
-E159,<*> VirtualBox kernel modules ...done.,16
-E160,<*> SDP server,16
-E161,Exit,5
-E162,The audit daemon is exiting.,5
-E163,audit: type=1305 <*> <*> <*> auid=4294967295 ses=4294967295 res=1,16
-E164,"audit: <*> <*> pid=1 uid=0 auid=4294967295 ses=4294967295 msg=' <*> exe=""/usr/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",40
-E165,WARNING: lvmetad is running but disabled. Restart lvmetad before enabling it!,5
-E166,No volume groups found,16
-E167,Shutting down.,5
-E168,Journal <*>,16
-E169,<*> journal is using <*> (max allowed <*> trying to leave <*> free of <*> available → current limit <*>,33
-E170,SELinux: Disabled at runtime.,11
-E171,audit: type=1404 <*> selinux=0 auid=4294967295 ses=4294967295,11
-E172,"RTC configured in localtime, applying delta of 480 minutes to system time.",11
-E173,"[ 0.000000] IOAPIC[0]: apic_id 128, version 32, address 0xfec00000, GSI 0-23",5
-E174,[ 0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 high edge),5
-E175,[ 0.000000] Using ACPI (MADT) for SMP configuration information,5
-E176,[ 0.000000] ACPI: HPET id: 0x8086af01 base: 0xfed00000,5
-E177,"[ 0.000000] smpboot: Allowing 128 CPUs, 124 hotplug CPUs",5
-E178,[ 0.000000] PM: Registered nosave memory: [mem <*>,75
-E179,EXT4-fs (nvme0n1p1): re-mounted. Opts: (null),11
-E180,Time spent on flushing to /var is <*> for <*> entries.,11
-E181,Failed at step EXEC spawning /run/initramfs/live/LiveCustom/PreRun.sh: No such file or directory,11
-E182,starting version 217,11
-E183,shpchp: Standard Hot Plug PCI Controller Driver version: 0.4,11
-E184,"vmw_vmci 0000:00:07.7: Found VMCI PCI device at 0x11080, irq 16",11
-E185,vmw_vmci 0000:00:07.7: Using capabilities 0x8000001c,11
-E186,piix4_smbus 0000:00:07.3: SMBus Host Controller not enabled!,11
-E187,Guest personality initialized and is active,11
-E188,"VMCI host device registered (name=vmci, major=10, minor=58)",11
-E189,Initialized host personality,11
-E190,Adding 33030140k swap on /dev/nvme0n1p2. Priority:-1 extents:1 across:33030140k SSFS,11
-E191,"checking bus 2, device 2: ""/sys/devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-1""",11
-E192,"bus: 2, device: 2 was not an MTP device",11
-E193,ppdev: user-space parallel port driver,11
-E194,Bluetooth: <*> ver <*>,22
-E195,NET: Registered protocol family <*>,22
-E196,Bluetooth: HCI device and connection manager initialized,11
-E197,Bluetooth: <*> <*> layer initialized,66
-E198,usbcore: registered new interface driver btusb,11
-E199,No rules,11
-E200,[ 0.000000] e820: [mem 0xc0000000-0xefffffff] available for PCI devices,5
-E201,[ 0.000000] Booting paravirtualized kernel on bare hardware,5
-E202,Started dispatcher: /sbin/audispd pid: <*>,11
-E203,[ <*> clocksource: <*> mask: <*> max_cycles: <*> max_idle_ns: <*> ns,25
-E204,[ 0.000000] setup_percpu: NR_CPUS:1024 nr_cpumask_bits:128 nr_cpu_ids:128 nr_node_ids:1,5
-E205,[ 0.000000] PERCPU: Embedded 34 pages/cpu @ffff88042d600000 s99992 r8192 d31080 u262144,5
-E206,audispd initialized with q_depth=150 and 1 active plugins,11
-E207,"Init complete, auditd 2.4.1 listening for events (startup state enable)",11
-E208,alsactl 1.0.28 daemon started,11
-E209,<*> daemon 5.23,23
-E210,<info> ModemManager (version 1.4.0-1.nd7.1) starting in system bus...,11
-E211,"[ 0.000000] Built 1 zonelists in Node order, mobility grouping on. Total pages: 4128594",5
-E212,[ 0.000000] Policy zone: Normal,5
-E213,[ 0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.4.13-200.nd7.3.x86_64 root=/dev/nvme0n1p1 ro rhgb quiet loglevel=0 LANG=zh_CN.UTF-8,5
-E214,[ 0.000000] log_buf_len individual max cpu contribution: 4096 bytes,5
-E215,[ 0.000000] log_buf_len total cpu_extra contributions: 520192 bytes,5
-E216,[ 0.000000] log_buf_len min size: 262144 bytes,5
-E217,[ 0.000000] log_buf_len: 1048576 bytes,5
-E218,[ 0.000000] early log buf free: 236312(90%),5
-E219,[ <*> <*> hash table entries: <*> (order: <*> <*> bytes),35
-E220,"[ 0.000000] Memory: 16395576K/16776604K available (7841K kernel code, 1390K rwdata, 3476K rodata, 1540K init, 1556K bss, 381028K reserved, 0K cma-reserved)",5
-E221,"[ 0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=128, Nodes=1",5
-E222,[ 0.000000] Hierarchical RCU implementation.,5
-E223,[ 0.000000] Build-time adjustment of leaf fanout to 64.,5
-E224,[ 0.000000] RCU restricting CPUs from NR_CPUS=1024 to nr_cpu_ids=128.,5
-E225,"[ 0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=128",5
-E226,[ 0.000000] NR_IRQS:65792 nr_irqs:1448 16,5
-E227,[ 0.000000] Offload RCU callbacks from <*> <*>,10
-E228,[ 0.000000] Console: colour VGA+ 80x25,5
-E229,[ 0.000000] console [tty0] enabled,5
-E230,[ 0.000000] TSC freq read from hypervisor : <*> MHz,5
-E231,[ 0.000000] tsc: Detected <*> MHz processor,5
-E232,[ <*> Calibrating delay loop (skipped) preset value.. <*> BogoMIPS <*>,5
-E233,[ <*> pid_max: default: 131072 minimum: 1024,5
-E234,[ <*> ACPI: Core revision 20150930,5
-E235,[ <*> ACPI: 1 ACPI AML tables successfully acquired and loaded,5
-E236,[ <*> Security Framework initialized,5
-E237,[ <*> Yama: becoming mindful.,5
-E238,[ <*> SELinux: Initializing.,5
-E239,[ <*> <*> <*> hash table entries: <*> (order: <*> <*> bytes),15
-E240,Found user 'avahi' (UID 70) and group 'avahi' (GID 70).,11
-E241,Successfully dropped <*> <*>,22
-E242,[ <*> CPU: <*> <*> ID: 0,10
-E243,avahi-daemon 0.6.31 starting up.,11
-E244,[ <*> mce: CPU supports 0 MCE banks,15
-E245,Family 6 Model ba CPU: only decoding architectural errors,11
-E246,"[ <*> Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0",5
-E247,"[ <*> Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0",5
-E248,VCGA-Message: Pref_Init: Using '/etc/vmware-tools/vgauth.conf' as preferences filepath,11
-E249,** Message: Core dump limit set to -1,11
-E250,[ <*> Freeing SMP alternatives memory: 28K (ffffffff81ede000 - ffffffff81ee5000),5
-E251,[ <*> ftrace: allocating 29656 entries in 116 pages,5
-E252,[ <*> x2apic enabled,5
-E253,[ <*> ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1,5
-E254,[ <*> APIC calibration not consistent with PM-Timer: <*> instead of 100ms,3
-E255,[ <*> APIC delta adjusted to PM-Timer: <*> <*>,3
-E256,"[ <*> smpboot: CPU0: 13th Gen Intel(R) Core(TM) i5-1335U (family: 0x6, model: 0xba, stepping: 0x3)",5
-E257,"[ <*> Performance Events: generic architected perfmon v1, core PMU driver.",5
-E258,[ <*> perf_event_intel: CPUID marked event: <*> <*> unavailable,30
-E259,[ <*> perf_event_intel: CPUID marked event: 'instructions' unavailable,5
-E260,[ <*> ... version: 1,5
-E261,[ <*> ... bit width: 48,5
-E262,[ <*> ... generic registers: 6,5
-E263,[ <*> ... <*> mask: <*>,10
-E264,[ <*> ... max period: 000000007fffffff,5
-E265,[ <*> ... fixed-purpose events: 0,5
-E266,[ <*> watchdog: disabled (inside virtual machine),5
-E267,[ <*> NMI watchdog: disabled (cpu0): hardware events not enabled,5
-E268,[ <*> NMI watchdog: Shutting down hard lockup detector on all cpus,5
-E269,[ <*> x86: Booting SMP configuration:,5
-E270,"[ <*> .... node #0, CPUs: #1",5
-E271,[ <*> #2<6>[ <*> mce: CPU supports 0 MCE banks,5
-E272,[ <*> #3,5
-E273,"[ <*> x86: Booted up 1 node, 4 CPUs",5
-E274,[ <*> smpboot: Total of 4 processors activated <*> BogoMIPS),5
-E275,[ <*> devtmpfs: initialized,5
-E276,[ <*> PM: Registering ACPI NVS region [mem 0xbfeff000-0xbfefffff] (4096 bytes),5
-E277,[ <*> atomic64_test: passed for x86-64 platform with CX8 and with SSE,5
-E278,[ <*> pinctrl core: initialized pinctrl subsystem,5
-E279,[ <*> RTC time: <*> date: <*>,5
-E280,[ <*> NET: Registered protocol family <*>,40
-E281,[ <*> cpuidle: using governor menu,5
-E282,[ <*> Simple Boot Flag at 0x36 set to 0x80,5
-E283,[ <*> ACPI: bus type <*> registered,10
-E284,[ <*> <*> <*> Hot Plug PCI Controller Driver version: <*>,10
-E285,[ <*> PCI: MMCONFIG for domain 0000 [bus 00-7f] at [mem 0xf0000000-0xf7ffffff] (base 0xf0000000),5
-E286,[ <*> PCI: MMCONFIG at [mem 0xf0000000-0xf7ffffff] reserved in E820,5
-E287,[ <*> pmd_set_huge: Cannot satisfy [mem 0xf0000000-0xf0200000] with a huge-page mapping due to MTRR override.,5
-E288,[ <*> PCI: Using configuration type 1 for base access,5
-E289,[ <*> ACPI: Added <*> Device),10
-E290,[ <*> ACPI: Added _OSI(3.0 _SCP Extensions),5
-E291,[ <*> ACPI: Added _OSI(Processor Aggregator Device),5
-E292,[ <*> [Firmware Bug]: ACPI: BIOS _OSI(Linux) query ignored,5
-E293,[ <*> ACPI: Interpreter enabled,5
-E294,"[ <*> ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State <*> (20150930/hwxface-580)",10
-E295,[ <*> ACPI: (supports S0 S1 S4 S5),5
-E296,[ <*> <*> Using <*> for <*> routing,10
-E297,"[ <*> PCI: Using host bridge windows from ACPI; if necessary, use ""pci=nocrs"" and report a bug",5
-E298,[ <*> ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-7f]),5
-E299,[ <*> acpi PNP0A03:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI],5
-E300,[ <*> acpi PNP0A03:00: _OSC: platform does not support [AER],5
-E301,[ <*> acpi PNP0A03:00: _OSC: OS now controls [PCIeHotplug PME PCIeCapability],5
-E302,[ <*> PCI host bridge to bus 0000:00,5
-E303,[ <*> pci_bus 0000:00: root bus resource <*> <*> window],40
-E304,[ <*> pci_bus 0000:00: root bus resource [bus 00-7f],5
-E305,[ <*> pci 0000:00:07.1: legacy IDE quirk: reg <*> [io <*>,20
-E306,[ <*> pci 0000:00:07.3: quirk: [io <*> claimed by PIIX4 <*>,10
-E307,[ <*> pci <*> System wakeup disabled by ACPI,190
-E308,[ <*> pci <*> PCI bridge to [bus <*>,335
-E309,[ <*> acpiphp: Slot <*> registered,160
-E310,[ <*> pci 0000:00:11.0: PCI bridge to [bus 02] (subtractive decode),5
-E311,[ <*> pci <*> disabling ASPM on pre-1.1 PCIe device. You can enable it with 'pcie_aspm=force',10
-E312,[ <*> ACPI: PCI Interrupt Link <*> (IRQs 3 4 5 6 7 <*> <*> <*> 14 15),15
-E313,"[ <*> ACPI: PCI Interrupt Link [LNKB] (IRQs 3 4 5 6 7 9 10 11 14 15) *0, disabled.",5
-E314,[ <*> ACPI: Enabled 2 GPEs in block 00 to 0F,5
-E315,[ <*> vgaarb: setting as boot device: PCI:0000:00:0f.0,5
-E316,"[ <*> vgaarb: device added: PCI:0000:00:0f.0,decodes=io+mem,owns=io+mem,locks=none",5
-E317,[ <*> <*> loaded,10
-E318,[ <*> vgaarb: bridge control possible 0000:00:0f.0,5
-E319,[ <*> SCSI subsystem initialized,5
-E320,[ <*> usbcore: registered new <*> driver <*>,35
-E321,[ <*> NetLabel: Initializing,5
-E322,[ <*> NetLabel: domain hash size = 128,5
-E323,[ <*> NetLabel: protocols = UNLABELED CIPSOv4,5
-E324,[ <*> NetLabel: unlabeled traffic allowed by default,5
-E325,"[ <*> hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0",5
-E326,"[ <*> hpet0: 16 comparators, 64-bit 14.318180 MHz counter",5
-E327,[ <*> clocksource: Switched to clocksource <*>,10
-E328,[ <*> pnp: PnP ACPI init,5
-E329,[ <*> system 00:00: [io 0x1000-0x103f] could not be reserved,5
-E330,[ <*> system <*> <*> <*> has been reserved,30
-E331,[ <*> pnp: PnP ACPI: found 7 devices,5
-E332,[ <*> pci <*> BAR 15: assigned [mem <*> 64bit pref],10
-E333,[ <*> pci <*> BAR 6: assigned [mem <*> pref],15
-E334,[ <*> pci <*> BAR 13: <*> <*> <*> [io size 0x1000],420
-E335,[ <*> pci <*> bridge window <*> <*>,225
-E336,[ <*> pci <*> bridge window [mem <*> 64bit pref],165
-E337,[ <*> TCP: Hash tables configured (established 131072 bind 65536),5
-E338,[ <*> pci 0000:00:00.0: Limiting direct PCI/PCI transfers,5
-E339,[ <*> Unpacking initramfs...,5
-E340,[ <*> Freeing initrd memory: 17140K (ffff880035e76000 - ffff880036f33000),5
-E341,[ <*> PCI-DMA: Using software bounce buffering for IO (SWIOTLB),5
-E342,[ <*> software IO TLB [mem 0xbbed0000-0xbfed0000] (64MB) mapped at [ffff8800bbed0000-ffff8800bfecffff],5
-E343,[ <*> audit: initializing netlink subsys (disabled),5
-E344,[ <*> audit: type=2000 <*> initialized,5
-E345,[ <*> Initialise system trusted keyring,5
-E346,"[ <*> HugeTLB registered <*> <*> page size, pre-allocated 0 pages",10
-E347,[ <*> VFS: Disk quotas dquot_6.6.0,5
-E348,"[ <*> VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)",5
-E349,[ <*> Key type <*> registered,10
-E350,[ <*> Asymmetric key parser 'x509' registered,5
-E351,[ <*> Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250),5
-E352,[ <*> io scheduler <*> registered,10
-E353,[ <*> io scheduler cfq registered (default),5
-E354,[ <*> <*> <*> Signaling PME through PCIe PME interrupt,170
-E355,Successfully called chroot().,11
-E356,[ <*> pci_hotplug: PCI Hot Plug PCI Core version: 0.5,5
-E357,[ <*> pciehp <*> Slot <*> AttnBtn+ PwrCtrl+ MRL- AttnInd- PwrInd- HotPlug+ Surprise- Interlock- NoCompl+ LLActRep+,160
-E358,[ <*> pciehp: PCI Express Hot Plug Controller Driver version: 0.4,5
-E359,[ <*> ACPI: AC Adapter [ACAD] (on-line),5
-E360,[ <*> input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0,5
-E361,[ <*> ACPI: Power Button [PWRF],5
-E362,[ <*> GHES: HEST is not enabled!,5
-E363,"[ <*> Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled",5
-E364,"[ <*> 00:05: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A",5
-E365,[ <*> Non-volatile memory driver v1.3,5
-E366,[ <*> Linux agpgart interface v0.103,5
-E367,[ <*> agpgart-intel 0000:00:00.0: Intel 440BX Chipset,5
-E368,[ <*> agpgart-intel 0000:00:00.0: AGP aperture is 256M @ 0x0,5
-E369,[ <*> scsi <*> ata_piix,10
-E370,[ <*> <*> PATA max UDMA/33 cmd <*> ctl <*> bmdma <*> irq <*>,10
-E371,[ <*> libphy: Fixed MDIO Bus: probed,5
-E372,[ <*> <*> USB <*> <*> Host Controller <*> Driver,10
-E373,[ <*> <*> <*> PCI platform driver,10
-E374,[ <*> ehci-pci 0000:02:02.0: EHCI Host Controller,5
-E375,"[ <*> <*> <*> new USB bus registered, assigned bus number <*>",10
-E376,"[ <*> ehci-pci 0000:02:02.0: irq 16, io mem 0xfd5ff000",5
-E377,"[ <*> ehci-pci 0000:02:02.0: USB 2.0 started, EHCI 1.00",5
-E378,"[ <*> usb <*> New USB device found, <*> <*>",25
-E379,"[ <*> usb <*> New USB device strings: <*> Product=2, <*>",25
-E380,[ <*> usb <*> Product: <*> Host Controller,10
-E381,[ <*> usb <*> Manufacturer: Linux 4.4.13-200.nd7.3.x86_64 <*>,10
-E382,[ <*> usb <*> SerialNumber: <*>,15
-E383,[ <*> hub <*> USB hub found,15
-E384,[ <*> hub <*> <*> ports detected,15
-E385,[ <*> uhci_hcd: USB Universal Host Controller Interface driver,5
-E386,[ <*> uhci_hcd 0000:02:00.0: UHCI Host Controller,5
-E387,[ <*> uhci_hcd 0000:02:00.0: detected 2 ports,5
-E388,"[ <*> uhci_hcd 0000:02:00.0: irq 18, io base 0x00002040",5
-E389,[ <*> usbserial: USB Serial support registered for generic,5
-E390,"[ <*> i8042: PNP: PS/2 Controller [PNP0303:KBC,PNP0f13:MOUS] at 0x60,0x64 irq 1,12",5
-E391,"[ <*> serio: i8042 <*> port at 0x60,0x64 irq <*>",10
-E392,No service file found in /etc/avahi/services.,11
-E393,[ <*> mousedev: PS/2 mouse device common for all mice,5
-E394,[ <*> rtc_cmos 00:01: rtc core: registered rtc_cmos as rtc0,5
-E395,"[ <*> rtc_cmos 00:01: alarms up to one month, y3k, 114 bytes nvram, hpet irqs",5
-E396,[ <*> device-mapper: uevent: version 1.0.3,5
-E397,[ <*> input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1,5
-E398,[ <*> device-mapper: ioctl: 4.34.0-ioctl (2015-10-28) initialised: dm-devel@redhat.com,5
-E399,[ <*> input: VirtualPS/2 VMware VMMouse as <*>,10
-E400,[ <*> hidraw: raw HID events driver (C) Jiri Kosina,5
-E401,"System host name is set to 'localhost'. This is not a suitable mDNS host name, looking for alternatives.",11
-E402,[ <*> usbhid: USB HID core driver,5
-E403,[ <*> drop_monitor: Initializing network drop monitor service,5
-E404,[ <*> ip_tables: (C) 2000-2006 Netfilter Core Team,5
-E405,"[ <*> ata2.00: ATAPI: VMware Virtual IDE CDROM Drive, 00000001, max UDMA/33",5
-E406,[ <*> Initializing XFRM netlink socket,5
-E407,[ <*> ata2.00: configured for UDMA/33,5
-E408,[ <*> usb <*> new full-speed USB device number <*> using uhci_hcd,15
-E409,[ <*> mip6: Mobile IPv6,5
-E410,"[ <*> microcode: <*> sig=0xb06a3, pf=0x1, revision=0xffffffff",20
-E411,[ <*> scsi 1:0:0:0: CD-ROM NECVMWar VMware IDE CDR10 1.00 PQ: 0 ANSI: 5,5
-E412,"[ <*> microcode: Microcode Update Driver: v2.01 <tigran@aivazian.fsnet.co.uk>, Peter Oruba",5
-E413,[ <*> AVX2 version of gcm_enc/dec engaged.,5
-E414,[ <*> AES CTR mode by8 optimization enabled,5
-E415,[ <*> sr 1:0:0:0: [sr0] scsi3-mmc drive: 1x/1x writer dvd-ram cd/rw xa/form2 cdda tray,5
-E416,[ <*> cdrom: Uniform CD-ROM driver Revision: 3.20,5
-E417,[ <*> sr 1:0:0:0: Attached scsi generic sg0 type 5,5
-E418,[ <*> usb <*> Product: VMware Virtual USB <*>,10
-E419,[ <*> usb <*> Manufacturer: VMware,10
-E420,[ <*> input: VMware VMware Virtual USB Mouse as /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-1/2-1:1.0/0003:0E0F:0003.0001/input/input5,5
-E421,"[ <*> hid-generic 0003:0E0F:0003.0001: input,hidraw0: USB HID v1.10 Mouse [VMware VMware Virtual USB Mouse] on usb-0000:02:00.0-1/input0",5
-E422,[ <*> hrtimer: interrupt took <*> ns,5
-E423,"[ <*> usb 2-2: Manufacturer: VMware, Inc.",5
-E424,[ <*> registered taskstats version 1,5
-E425,[ <*> Loading compiled-in X.509 certificates,5
-E426,[ <*> Loaded X.509 cert 'Fedora kernel signing key: 3694d8f4137fb4e587a4ab55207f39e652018af3',5
-E427,[ <*> zswap: loaded using pool lzo/zbud,5
-E428,[ <*> Magic number: <*>,5
-E429,[ <*> rtc_cmos 00:01: setting system clock to <*> <*> UTC <*>,5
-E430,[ <*> Freeing unused kernel memory: <*> <*> - <*>,15
-E431,[ <*> Write protecting the kernel read-only data: 12288k,5
-E432,[ <*> random: systemd urandom read with <*> bits of entropy available,5
-E433,[ <*> usb 2-2.1: Product: Virtual Bluetooth Adapter,5
-E434,[ <*> FUJITSU Extended Socket Network Device Driver - version 1.0 - Copyright (c) 2015 FUJITSU LIMITED,5
-E435,[ <*> VMware vmxnet3 virtual NIC driver - version <*>-k-NAPI,5
-E436,"[ <*> vmxnet3 0000:03:00.0: # of Tx queues : 4, # of Rx queues : 4",5
-E437,[ <*> vmxnet3 0000:03:00.0 <*> NIC Link is Up 10000 Mbps,17
-E438,[ <*> [drm] Initialized drm 1.1.0 20060810,5
-E439,[ <*> nvme0n1: p1 p2 p3 p4 < p5 >,5
-E440,[ <*> [drm] DMA map mode: Using physical TTM page addresses.,5
-E441,[ <*> [drm] <*>,40
-E442,[ <*> [drm] Rect copy.,5
-E443,[ <*> [drm] Cursor bypass.,5
-E444,[ <*> [drm] <*> <*> 2.,15
-E445,[ <*> [drm] 8bit emulation.,5
-E446,[ <*> [drm] Alpha cursor.,5
-E447,[ <*> [drm] Extended Fifo.,5
-E448,[ <*> [drm] Irq mask.,5
-E449,[ <*> [drm] Display Topology.,5
-E450,Network interface enumeration completed.,11
-E451,Bluetooth: BNEP (Ethernet Emulation) ver 1.3,11
-E452,Bluetooth: BNEP filters: protocol multicast,11
-E453,[ <*> [drm] Command Buffers.,5
-E454,[ <*> [drm] Guest Backed Resources.,5
-E455,[ <*> [drm] DX Features.,5
-E456,[ <*> [drm] Max GMR ids is 64,5
-E457,[ <*> [drm] Max number of GMR pages is 65536,5
-E458,[ <*> [drm] Max dedicated hypervisor surface memory is 0 kiB,5
-E459,[ <*> [drm] <*> <*> <*> size is <*> kiB,15
-E460,[ <*> [drm] global init.,5
-E461,[ <*> [TTM] Zone <*> Available graphics memory: <*> kiB,10
-E462,[ <*> [TTM] Initializing pool allocator,5
-E463,[ <*> [TTM] Initializing DMA pool allocator,5
-E464,[ <*> [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).,5
-E465,[ <*> [drm] No driver support for vblank timestamp query.,5
-E466,[ <*> [drm] Screen Target Display device initialized,5
-E467,[ <*> [drm] width 800,5
-E468,[ <*> [drm] height 480,5
-E469,[ <*> [drm] bpp 32,5
-E470,[ <*> [drm] Fifo max 0x00040000 min 0x00001000 cap 0x0000077f,5
-E471,[ <*> [drm] Using command buffers with DMA pool.,5
-E472,[ <*> [drm] DX: yes.,5
-E473,[ <*> fbcon: svgadrmfb (fb0) is primary device,5
-E474,[ <*> Console: switching to colour frame buffer device 100x37,5
-E475,[ <*> [drm] Initialized vmwgfx 2.9.0 20150810 for 0000:00:0f.0 on minor 0,5
-E476,[ <*> vmxnet3 0000:03:00.0 eno16777984: renamed from eth0,5
-E477,[ <*> PM: Starting manual resume from disk,5
-E478,[ <*> EXT4-fs <*> mounted filesystem with ordered data mode. Opts: (null),6
-E479,[ <*> random: nonblocking pool is initialized,5
-E480,[ <*> SELinux: Disabled at runtime.,5
-E481,[ <*> audit: type=1404 <*> selinux=0 auid=4294967295 ses=4294967295,5
-E482,[ <*> EXT4-fs (nvme0n1p1): re-mounted. Opts: (null),5
-E483,"[ <*> vmw_vmci 0000:00:07.7: Found VMCI PCI device at 0x11080, irq 16",5
-E484,[ <*> vmw_vmci 0000:00:07.7: Using capabilities 0x8000001c,5
-E485,[ <*> piix4_smbus 0000:00:07.3: SMBus Host Controller not enabled!,5
-E486,[ <*> Guest personality initialized and is active,5
-E487,"[ <*> VMCI host device registered (name=vmci, major=10, minor=58)",5
-E488,[ <*> Initialized host personality,5
-E489,[ <*> Adding 33030140k swap on /dev/nvme0n1p2. Priority:-1 extents:1 across:33030140k SSFS,5
-E490,[ <*> ppdev: user-space parallel port driver,5
-E491,[ <*> Bluetooth: <*> ver <*>,10
-E492,[ <*> Bluetooth: HCI device and connection manager initialized,5
-E493,[ <*> Bluetooth: <*> <*> layer initialized,30
-E494,[ <*> audit: type=1305 <*> <*> old=0 auid=4294967295 ses=4294967295 res=1,5
-E495,[ <*> Bluetooth: BNEP (Ethernet Emulation) ver 1.3,5
-E496,[ <*> Bluetooth: BNEP filters: protocol multicast,5
-E497,Server startup complete. Host name is linux.local. Local service cookie is <*>,11
-E498,Bluetooth management interface 1.10 initialized,11
-E499,mcelog: Family 6 Model ba CPU: only decoding architectural errors,11
-E500,New seat seat0.,11
-E501,Watching system buttons on /dev/input/event0 (Power Button),11
-E502,[ <*> vboxdrv: module verification failed: signature and/or required key missing - tainting kernel,5
-E503,vboxdrv: module verification failed: signature and/or required key missing - tainting kernel,11
-E504,<info> NetworkManager (version <*>-5.nd7.2) is starting...,11
-E505,<info> Read config: /etc/NetworkManager/NetworkManager.conf,11
-E506,<info> WEXT support is enabled,11
-E507,<info> VPN: loaded <*>,55
-E508,"[ <*> vboxdrv: TSC mode is Invariant, tentative frequency <*> Hz",5
-E509,"vboxdrv: TSC mode is Invariant, tentative frequency <*> Hz",11
-E510,[ <*> <*> Successfully started.,10
-E511,<*> Successfully started.,22
-E512,[ <*> VBoxPciLinuxInit,5
-E513,[ <*> vboxpci: IOMMU not found (not registered),5
-E514,VBoxPciLinuxInit,11
-E515,vboxpci: IOMMU not found (not registered),11
-E516,Starting iceventd: [ 确定 ],11
-E517,Started polkitd version 0.112,11
-E518,started daemon version 0.6.39,11
-E519,<info> Acquired D-Bus service com.redhat.ifcfgrh1,11
-E520,"<info> Loaded plugin <*> (c) 2007 - 2013 Red Hat, Inc. To report bugs please use the NetworkManager mailing list.",22
-E521,<info> parsing <*> ...,22
-E522,<info> monitoring kernel firmware directory '/lib/firmware'.,11
-E523,<info> <*> hardware radio set enabled,22
-E524,<info> Loaded device plugin: <*>,44
-E525,"[ <*> vmxnet3 0000:03:00.0 eno16777984: intr type 3, mode 0, 5 vectors allocated",5
-E526,<info> <*> enabled by radio killswitch; enabled by state file,33
-E527,<info> Networking is enabled by state file,11
-E528,<info> <*> carrier is <*>,22
-E529,<info> <*> new <*> device (driver: <*> ifindex: <*>,22
-E530,<info> <*> exported as <*>,22
-E531,<info> (eno16777984): preparing device,15
-E532,<info> use BlueZ version 5,11
-E533,<info> ModemManager available in the bus,11
-E534,"vmxnet3 0000:03:00.0 eno16777984: intr type 3, mode 0, 5 vectors allocated",15
-E535,<warn> Couldn't find support for device at '/sys/devices/pci0000:00/0000:00:15.0/0000:03:00.0': not supported by any plugin,11
-E536,Virtual1,13
-E537,i = Virtual1,13
-E538,800x600 2560x1600 1920x1440 1856x1392 1792x1344 1920x1200 1600x1200 1680x1050 1400x1050 1280x1024 1440x900 1280x960 1360x768 1280x800 1152x864 1280x768 1024x768 640x480,11
-E539,New session <*> of user <*>,29
-E540,Activating service name='org.a11y.atspi.Registry',25
-E541,Successfully activated service 'org.a11y.atspi.Registry',25
-E542,SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry,25
-E543,[ <*> fuse init (API version 7.23),5
-E544,fuse init (API version 7.23),11
-E545,<info> startup complete,11
-E546,A connection to the bus can't be made,13
-E547,Removed session <*>,17
-E548,[ <*> <*> INFO: Starting imsettings-daemon...,12
-E549,[ <*> IMSettings-Daemon[1007]: INFO: <*>,4
-E550,"[ <*> <*> INFO: [MODULES=mate-gsettings, gsettings, qt]",12
-E551,dconf: unable to create file '/home/user/.cache/dconf/user': 权限不够. dconf will not work properly.,22
-E552,failed to unlock login keyring on startup,12
-E553,[pulseaudio] alsa-util.c: Disabling timer-based scheduling because running inside a VM.,22
-E554,Successfully made thread <*> of process <*> (/usr/bin/pulseaudio) owned by '1000' RT at priority 5.,22
-E555,[alsa-sink-ES1371/1] alsa-sink.c: ALSA 提醒我们在该设备中写入新数据，但实际上没有什么可以写入的！,11
-E556,<*> <*> 这很可能是 ALSA 驱动程序 'snd_ens1371' 中的一个 bug。请向 ALSA 开发人员报告这个问题。,15
-E557,<*> <*> 提醒我们设置 POLLOUT -- 但结果是 snd_pcm_avail() 返回 0 或者另一个小于最小可用值的数值。,15
-E558,udisks daemon version 2.1.3 starting,11
-E559,"Error probing device: Error sending ATA command IDENTIFY PACKET DEVICE to /dev/sr0: ATA command failed: error=0x01 count=0x02 status=0x50 (g-io-error-quark, 0)",11
-E560,Acquired the name org.freedesktop.UDisks2 on the system message bus,11
-E561,goa-daemon-Message: goa-daemon version 3.14.2 starting,12
-E562,<*> libgoaidentity-WARNING **: GoaKerberosIdentityManager: Using polling for change notification for credential cache type 'KEYRING',12
-E563,Volume monitor alive,12
-E564,[alsa-source-ES1371/1] alsa-source.c: ALSA 提醒我们从该设备中读取新数据，但实际上没有什么可以读取的！,4
-E565,(wnck-applet:1477): <*> **: <*> assertion <*> <*> failed,22
-E566,<*> GLib-GObject-WARNING **: invalid (NULL) pointer instance,120
-E567,<*> Gtk-WARNING **: <*> missing action <*>,324
-E568,(separator-applet:1473): <*> **: <*> assertion <*> <*> failed,11
-E569,(notification-area-applet:1480): <*> **: <*> assertion <*> <*> failed,11
-E570,** <*> WARNING **: need to free the control here,12
-E571,<*> Gtk-WARNING **: <*> <*> <*> Item: missing action <*>,48
-E572,(clock-applet:1478): <*> **: <*> assertion <*> <*> failed,11
-E573,<*> Gtk-WARNING **: <*> <*> Item: missing action <*>,48
-E574,[system] Activating service <*> (using servicehelper),24
-E575,Mounted <*> at <*> on behalf of uid <*>,12
-E576,index_parse.c:191: indx_parse(): error opening <*>,24
-E577,WARNING: Application 'mate-xlogin-sound.desktop' failed to register before timeout,12
-E578,The <*> <*> was already initialized,48
-E579,"[ <*> <*> INFO: Attempting to switch IM to IBus [lang=zh_CN.UTF-8, update=false]",12
-E580,[ <*> <*> INFO: no need to invoke any auxiliary process for IBus,12
-E581,[ <*> <*> INFO: Starting the main process for IBus [lang:zh_CN.UTF-8],12
-E582,"[ <*> <*> INFO: Started IBus: [process: /usr/bin/ibus-daemon -r --xim, lang: zh_CN.UTF-8, pid: <*> id: 48, time: <*>",12
-E583,[ <*> <*> <*> INFO: Setting up <*> as <*> immodule,36
-E584,[ warning] [Gtk] gtk_disable_setlocale() must be called before gtk_init(),12
-E585,[ warning] <*> SimpleSock: Send error for socket <*> 32[断开的管道],134
-E586,<*> OBEX daemon 5.23,12
-E587,Unable to init server: Could not connect: Connection refused,24
-E588,<*> Gtk-CRITICAL **: <*> assertion <*> <*> failed,348
-E589,loading <*>,96
-E590,Exiting,24
-E591,"Exception AttributeError: ""'NoneType' object has no attribute 'stdout'"" in <bound method Tee.__del__ of <__main__.Tee object at <*> ignored",12
-E592,<*> metadata will expire after <*> seconds and will be refreshed now,4
-E593,WARNING: Child process 1426 was already dead.,1
-E594,[ 5590.552273] EXT4-fs (nvme0n1p3): recovery complete,1
-E595,EXT4-fs (nvme0n1p3): recovery complete,1
-E596,EXT4-fs (nvme0n1p3): mounted filesystem with ordered data mode. Opts: (null),1
-E597,[ 6575.572086] sched: RT throttling activated,1
-E598,sched: RT throttling activated,1
-E599,httpd: Syntax error on line 353 of /etc/httpd/conf/httpd.conf: Syntax error on line <*> of <*> <*> <*> <*> <*> <*>,7
-E600,"kill: cannot find process """"",7
-E601,"httpd.service: control process exited, code=exited status=1",7
-E602,Failed to start The Apache HTTP Server.,7
-E603,<*> hpet1: lost 1 rtc interrupts,10
-E604,"[ 1717407977.217443]: IMSettings-Daemon[1007]: INFO: Sent a signal to stop /usr/bin/ibus-daemon [pid: 1914, time: 2024-06-03T09:46:17.217431Z]",1
-E605,[ 1717407977.217559]: IMSettings-Daemon[1007]: INFO: imsettings-daemon is shut down.,1
-E606,<warn> error requesting auth for <*> (4) GDBus.Error:org.freedesktop.DBus.Error.NoReply: Message did not receive a reply (timeout by message bus),8
-E607,random: nonblocking pool is initialized,7
-E608,[ <*> <*> <*> hash matches,5
-E609,Starting MySQL[ 确定 ],10
-E610,[ <*> IMSettings-Daemon[1302]: INFO: <*>,16
-E611,Endpoint <*> sender=:1.35 <*>,24
-E612,<*> GLib-GObject-CRITICAL **: <*> assertion <*> <*> failed,275
-E613,"[ <*> atkbd serio0: Unknown key <*> (translated set 2, code 0x6d on isa0060/serio0).",2
-E614,[ <*> atkbd serio0: Use 'setkeycodes 6d <keycode>' to make it known.,2
-E615,"atkbd serio0: Unknown key <*> (translated set 2, code 0x6d on isa0060/serio0).",8
-E616,atkbd serio0: Use 'setkeycodes 6d <keycode>' to make it known.,8
-E617,The canary thread is apparently starving. Taking action.,4
-E618,Demoting known real-time threads.,4
-E619,Successfully demoted thread <*> of process <*> <*>,16
-E620,Demoted 4 threads.,4
-E621,(to <*> user on <*>,27
-E622,<info> <*> requested (sleeping: no enabled: <*>,8
-E623,<info> <*>,8
-E624,Received packet from invalid interface.,12
-E625,[10038.217587] IPv6: ADDRCONF(NETDEV_UP): eno16777984: link is not ready,1
-E626,IPv6: ADDRCONF(NETDEV_UP): eno16777984: link is not ready,4
-E627,"[10038.491163] usb 2-2.1: USB disconnect, device number 4",1
-E628,"usb 2-2.1: USB disconnect, device number 4",4
-E629,"[system] Rejected send message, 11 matched rules; type=""error"", sender="":1.35"" (uid=1000 pid=1444 comm=""/usr/bin/pulseaudio --start --log-target=syslog "") interface=""(unset)"" member=""(unset)"" error name=""org.bluez.MediaEndpoint1.Error.NotImplemented"" requested_reply=""0"" destination="":1.2"" (uid=0 pid=627 comm=""/usr/libexec/bluetooth/bluetoothd "")",16
-E630,error opening USB device 'descriptors' file,4
-E631,[10038.905509] usb 2-2.1: new full-speed USB device number 5 using uhci_hcd,1
-E632,usb 2-2.1: new full-speed USB device number 5 using uhci_hcd,4
-E633,"[10039.023672] usb 2-2.1: New USB device found, idVendor=0e0f, idProduct=0008",1
-E634,"[10039.023681] usb 2-2.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3",1
-E635,[10039.023686] usb 2-2.1: Product: Virtual Bluetooth Adapter,1
-E636,[10039.023815] usb 2-2.1: Manufacturer: VMware,1
-E637,[10039.023834] usb 2-2.1: SerialNumber: 000650268328,1
-E638,"usb 2-2.1: New USB device found, idVendor=0e0f, idProduct=0008",4
-E639,"usb 2-2.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3",4
-E640,usb 2-2.1: Product: Virtual Bluetooth Adapter,4
-E641,usb 2-2.1: <*> <*>,8
-E642,"[10039.243837] vmxnet3 0000:03:00.0 eno16777984: intr type 3, mode 0, 5 vectors allocated",1
-E643,FAILED SU (to root) user on pts/0,12
-E644,Received response from host <*> with invalid source port <*> on interface 'eno16777984.0',166
-E645,Using <*> /usr/local/myapp/apache-tomcat-7.0.57,12
-E646,Using CATALINA_TMPDIR: /usr/local/myapp/apache-tomcat-7.0.57/temp,6
-E647,Using JRE_HOME: /usr/java/java-se-7u75-ri,6
-E648,Using CLASSPATH: /usr/local/myapp/apache-tomcat-7.0.57/bin/bootstrap.jar:/usr/local/myapp/apache-tomcat-7.0.57/bin/tomcat-juli.jar,6
-E649,Tomcat started.,6
-E650,[ <*> IMSettings-Daemon[1408]: INFO: <*>,12
-E651,Endpoint registered: <*> <*>,14
-E652,<*> has expired and will be refreshed.,12
-E653,hrtimer: interrupt took <*> ns,3
-E654,[ <*> IMSettings-Daemon[1399]: INFO: <*>,8
-E655,[ <*> vmxnet3 0000:03:00.0 eno16777984: NIC Link is Down,7
-E656,"<warn> (eno16777984): DHCP client pid <*> didn't exit, will kill it.",4
-E657,/usr/sbin/alsactl: load_state:1729No soundcards found...,1
-E658,(lightdm:886): GLib-GIO-CRITICAL **: g_dbus_connection_call_sync_internal: assertion 'object_path != NULL && g_variant_is_object_path (object_path)' failed,1
-E659,[ <*> IMSettings-Daemon[1386]: INFO: <*>,4
-E660,Gkm: unable to create keyring dir: /root/.local/share/keyrings,2
-E661,Gkm: couldn't write to file: /root/.local/share/keyrings/login.keyring: 没有那个文件或目录,1
-E662,"Gkm: couldn't delete aborted file, data may be lost: /root/.local/share/keyrings/login.keyring: 没有那个文件或目录",1
-E663,couldn't create login keyring: An error occurred on the device,1
-E664,Disabling timer-based scheduling because running inside a VM.,2
-E665,ALSA <*>,2
-E666,这很可能是 ALSA 驱动程序 'snd_ens1371' 中的一个 bug。请向 ALSA 开发人员报告这个问题。,2
-E667,提醒我们设置 POLLOUT -- 但结果是 snd_pcm_avail() 返回 0 或者另一个小于最小可用值的数值。,2
-E668,Failed to <*> <*> <*> '/root/.config/pulse/cookie': 没有那个文件或目录,2
-E669,Failed to <*> <*> <*> '/root/.pulse-cookie': 没有那个文件或目录,2
-E670,1918x878 2560x1600 1920x1440 1856x1392 1792x1344 1920x1200 1600x1200 1680x1050 1400x1050 1280x1024 1440x900 1280x960 1360x768 1280x800 1152x864 1280x768 1024x768 800x600 640x480,2
-E671,[ <*> IMSettings-Daemon[2564]: INFO: <*>,4
-E672,RFCOMM server failed for <*> <*> <*> rfcomm_bind: Address already in use (98),2
-E673,RFCOMM server failed for <*> <*> rfcomm_bind: Address already in use (98),4
-E674,RFCOMM server failed for Synchronization: rfcomm_bind: Address already in use (98),1
-E675,** (lightdm:886): WARNING **: Error using VT_WAITACTIVE 1 on /dev/tty0: Interrupted system call,1
-E676,[ warning] [vmusr] SimpleSock: Socket 7 closed by peer.,1
+E98,"origin software=""rsyslogd"" swVersion=""7.4.10"" <*> x-info=""http://www.rsyslog.com""] exiting on signal 15.",2
+E99,"origin software=""rsyslogd"" swVersion=""7.4.10"" <*> x-info=""http://www.rsyslog.com""] start",5
+E100,<*> Initializing cgroup subsys <*>,60
+E101,0.000000] Linux version 4.4.13-200.nd7.3.x86_64 (mockbuild@kojibuilder8) (gcc version 4.9.3 20150626 (NeoKylin 4.9.3-3) (GCC) ) #1 SMP Sat Jul 8 23:22:12 CST 2017,5
+E102,0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-4.4.13-200.nd7.3.x86_64 root=/dev/nvme0n1p1 ro rhgb quiet loglevel=0 LANG=zh_CN.UTF-8,5
+E103,"0.000000] x86/fpu: xstate_offset[2]: 576, xstate_sizes[2]: 256",5
+E104,0.000000] x86/fpu: Supporting XSAVE feature 0x01: 'x87 floating point registers',5
+E105,0.000000] x86/fpu: Supporting XSAVE feature <*> <*> registers',10
+E106,"0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.",5
+E107,0.000000] x86/fpu: Using 'eager' FPU context switches.,5
+E108,0.000000] e820: BIOS-provided physical RAM map:,5
+E109,0.000000] BIOS-e820: [mem <*> <*>,50
+E110,0.000000] BIOS-e820: [mem <*> ACPI <*>,10
+E111,0.000000] NX (Execute Disable) protection: active,5
+E112,0.000000] SMBIOS 2.7 present.,5
+E113,0.000000] Hypervisor detected: VMware,5
+E114,0.000000] e820: last_pfn = <*> max_arch_pfn = 0x400000000,10
+E115,0.000000] x86/PAT: Configuration [0-7]: WB WC UC- UC WB WC UC- WT,5
+E116,0.000000] found SMP MP-table at [mem 0x000f6a70-0x000f6a7f] mapped at [ffff8800000f6a70],5
+E117,0.000000] Using GB pages for direct mapping,5
+E118,0.000000] <*> [mem <*>,20
+E119,0.000000] ACPI: Early table checksum verification disabled,5
+E120,0.000000] ACPI: RSDP 0x00000000000F6A00 000024 (v02 PTLTD ),5
+E121,0.000000] ACPI: XSDT 0x00000000BFEDB633 00005C (v01 INTEL 440BX 06040000 VMW 01324272),5
+E122,0.000000] ACPI: FACP 0x00000000BFEFEE73 0000F4 (v04 INTEL 440BX 06040000 PTL 000F4240),5
+E123,0.000000] ACPI: DSDT 0x00000000BFEDD001 021E72 (v01 PTLTD Custom 06040000 MSFT 03000001),5
+E124,0.000000] ACPI: FACS 0x00000000BFEFFFC0 000040,10
+E125,0.000000] ACPI: <*> <*> <*> (v01 PTLTD <*> 06040000 LTP 00000001),10
+E126,0.000000] ACPI: APIC 0x00000000BFEDC872 000742 (v01 PTLTD ? APIC 06040000 LTP 00000000),5
+E127,0.000000] ACPI: SRAT 0x00000000BFEDB72F 0008D0 (v02 VMWARE MEMPLUG 06040000 VMW 00000001),5
+E128,0.000000] ACPI: <*> <*> <*> (v01 VMWARE VMW <*> 06040000 VMW 00000001),10
+E129,alsactl daemon stopped,5
+E130,<*> <*> APIC routing to physical <*>,10
+E131,0.000000] SRAT: PXM 0 -> APIC <*> -> Node 0,640
+E132,Endpoint <*> sender=:1.33 <*>,12
+E133,"<info> Caught signal, shutting down...",5
+E134,0.000000] SRAT: Node 0 PXM 0 [mem <*>,15
+E135,0.000000] SRAT: Node 0 PXM 0 [mem 0x440000000-0x403fffffff] hotplug,5
+E136,0.000000] NUMA: Node 0 [mem <*> + [mem <*> -> [mem <*>,10
+E137,0.000000] NODE_DATA(0) allocated [mem 0x43ffec000-0x43fffdfff],5
+E138,0.000000] Zone ranges:,5
+E139,0.000000] Movable zone start for each node,5
+E140,0.000000] Early memory node ranges,5
+E141,0.000000] node 0: [mem <*>,20
+E142,0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000043fffffff],5
+E143,0.000000] ACPI: PM-Timer IO Port: 0x1008,5
+E144,0.000000] ACPI: LAPIC_NMI <*> high edge lint[0x1]),640
+E145,"Got SIGTERM, quitting.",5
+E146,avahi-daemon 0.6.31 exiting.,5
+E147,<warn> error requesting auth for <*> (2) GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name :1.8 was not provided by any .service files,2
+E148,<info> ModemManager is shut down,5
+E149,<info> ModemManager disappeared from bus,5
+E150,<warn> disconnected by the system bus.,5
+E151,"g_dbus_connection_real_closed: Remote peer vanished with error: 接受信息出错：Connection reset by peer (g-io-error-quark, 0). Exiting.",1
+E152,"<*> main process exited, code=exited, <*>",18
+E153,Unit <*> entered failed state.,18
+E154,<*> failed.,18
+E155,Failed to get D-Bus connection,5
+E156,"g_dbus_connection_real_closed: Remote peer vanished with error: Underlying GIOStream returned 0 bytes on an async read (g-io-error-quark, 0). Exiting.",49
+E157,"<info> caught signal 15, shutting down normally.",5
+E158,<*> GLib-CRITICAL **: Source ID 33 was not found when attempting to remove it,5
+E159,<info> exiting (success),5
+E160,Shutting down iceventd: [ 确定 ],5
+E161,VBoxPciLinuxLinuxUnload,5
+E162,<*> VirtualBox kernel modules ...done.,16
+E163,<*> SDP server,16
+E164,Exit,5
+E165,The audit daemon is exiting.,5
+E166,audit: type=1305 <*> <*> <*> auid=4294967295 ses=4294967295 res=1,16
+E167,"audit: <*> <*> pid=1 uid=0 auid=4294967295 ses=4294967295 msg=' <*> exe=""/usr/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",40
+E168,WARNING: lvmetad is running but disabled. Restart lvmetad before enabling it!,5
+E169,No volume groups found,16
+E170,Shutting down.,5
+E171,Journal <*>,16
+E172,<*> journal is using <*> (max allowed <*> trying to leave <*> free of <*> available → current limit <*>,33
+E173,SELinux: Disabled at runtime.,11
+E174,audit: type=1404 <*> selinux=0 auid=4294967295 ses=4294967295,11
+E175,"RTC configured in localtime, applying delta of 480 minutes to system time.",11
+E176,"0.000000] IOAPIC[0]: apic_id 128, version 32, address 0xfec00000, GSI 0-23",5
+E177,0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 high edge),5
+E178,0.000000] Using ACPI (MADT) for SMP configuration information,5
+E179,0.000000] ACPI: HPET id: 0x8086af01 base: 0xfed00000,5
+E180,"0.000000] smpboot: Allowing 128 CPUs, 124 hotplug CPUs",5
+E181,0.000000] PM: Registered nosave memory: [mem <*>,75
+E182,EXT4-fs (nvme0n1p1): re-mounted. Opts: (null),11
+E183,Time spent on flushing to /var is <*> for <*> entries.,11
+E184,Failed at step EXEC spawning /run/initramfs/live/LiveCustom/PreRun.sh: No such file or directory,11
+E185,starting version 217,11
+E186,shpchp: Standard Hot Plug PCI Controller Driver version: 0.4,11
+E187,"vmw_vmci 0000:00:07.7: Found VMCI PCI device at 0x11080, irq 16",11
+E188,vmw_vmci 0000:00:07.7: Using capabilities 0x8000001c,11
+E189,piix4_smbus 0000:00:07.3: SMBus Host Controller not enabled!,11
+E190,Guest personality initialized and is active,11
+E191,"VMCI host device registered (name=vmci, major=10, minor=58)",11
+E192,Initialized host personality,11
+E193,Adding 33030140k swap on /dev/nvme0n1p2. Priority:-1 extents:1 across:33030140k SSFS,11
+E194,"checking bus 2, device 2: ""/sys/devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-1""",11
+E195,"bus: 2, device: 2 was not an MTP device",11
+E196,ppdev: user-space parallel port driver,11
+E197,Bluetooth: <*> ver <*>,22
+E198,NET: Registered protocol family <*>,22
+E199,Bluetooth: HCI device and connection manager initialized,11
+E200,Bluetooth: <*> <*> layer initialized,66
+E201,usbcore: registered new interface driver btusb,11
+E202,No rules,11
+E203,0.000000] e820: [mem 0xc0000000-0xefffffff] available for PCI devices,5
+E204,0.000000] Booting paravirtualized kernel on bare hardware,5
+E205,Started dispatcher: /sbin/audispd pid: <*>,11
+E206,<*> clocksource: <*> mask: <*> max_cycles: <*> max_idle_ns: <*> ns,25
+E207,0.000000] setup_percpu: NR_CPUS:1024 nr_cpumask_bits:128 nr_cpu_ids:128 nr_node_ids:1,5
+E208,0.000000] PERCPU: Embedded 34 pages/cpu @ffff88042d600000 s99992 r8192 d31080 u262144,5
+E209,audispd initialized with q_depth=150 and 1 active plugins,11
+E210,"Init complete, auditd 2.4.1 listening for events (startup state enable)",11
+E211,alsactl 1.0.28 daemon started,11
+E212,<*> daemon 5.23,23
+E213,<info> ModemManager (version 1.4.0-1.nd7.1) starting in system bus...,11
+E214,"0.000000] Built 1 zonelists in Node order, mobility grouping on. Total pages: 4128594",5
+E215,0.000000] Policy zone: Normal,5
+E216,0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.4.13-200.nd7.3.x86_64 root=/dev/nvme0n1p1 ro rhgb quiet loglevel=0 LANG=zh_CN.UTF-8,5
+E217,0.000000] log_buf_len individual max cpu contribution: 4096 bytes,5
+E218,0.000000] log_buf_len total cpu_extra contributions: 520192 bytes,5
+E219,0.000000] log_buf_len min size: 262144 bytes,5
+E220,0.000000] log_buf_len: 1048576 bytes,5
+E221,0.000000] early log buf free: 236312(90%),5
+E222,<*> <*> hash table entries: <*> (order: <*> <*> bytes),35
+E223,"0.000000] Memory: 16395576K/16776604K available (7841K kernel code, 1390K rwdata, 3476K rodata, 1540K init, 1556K bss, 381028K reserved, 0K cma-reserved)",5
+E224,"0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=128, Nodes=1",5
+E225,0.000000] Hierarchical RCU implementation.,5
+E226,0.000000] Build-time adjustment of leaf fanout to 64.,5
+E227,0.000000] RCU restricting CPUs from NR_CPUS=1024 to nr_cpu_ids=128.,5
+E228,"0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=128",5
+E229,0.000000] NR_IRQS:65792 nr_irqs:1448 16,5
+E230,0.000000] Offload RCU callbacks from <*> <*>,10
+E231,0.000000] Console: colour VGA+ 80x25,5
+E232,0.000000] console [tty0] enabled,5
+E233,0.000000] TSC freq read from hypervisor : <*> MHz,5
+E234,0.000000] tsc: Detected <*> MHz processor,5
+E235,<*> Calibrating delay loop (skipped) preset value.. <*> BogoMIPS <*>,5
+E236,<*> pid_max: default: 131072 minimum: 1024,5
+E237,<*> ACPI: Core revision 20150930,5
+E238,<*> ACPI: 1 ACPI AML tables successfully acquired and loaded,5
+E239,<*> Security Framework initialized,5
+E240,<*> Yama: becoming mindful.,5
+E241,<*> SELinux: Initializing.,5
+E242,"<*> Dentry cache hash table entries: 2097152 (order: 12, 16777216 bytes)",5
+E243,Found user 'avahi' (UID 70) and group 'avahi' (GID 70).,11
+E244,Successfully dropped <*> <*>,22
+E245,<*> CPU: <*> <*> ID: 0,10
+E246,avahi-daemon 0.6.31 starting up.,11
+E247,<*> mce: CPU supports 0 MCE banks,15
+E248,Family 6 Model ba CPU: only decoding architectural errors,11
+E249,"<*> Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0",5
+E250,"<*> Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0",5
+E251,VCGA-Message: Pref_Init: Using '/etc/vmware-tools/vgauth.conf' as preferences filepath,11
+E252,Message: Core dump limit set to -1,11
+E253,<*> Freeing SMP alternatives memory: 28K (ffffffff81ede000 - ffffffff81ee5000),5
+E254,<*> ftrace: allocating 29656 entries in 116 pages,5
+E255,<*> x2apic enabled,5
+E256,<*> ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1,5
+E257,<*> APIC calibration not consistent with PM-Timer: <*> instead of 100ms,3
+E258,<*> APIC delta adjusted to PM-Timer: <*> <*>,3
+E259,"<*> smpboot: CPU0: 13th Gen Intel(R) Core(TM) i5-1335U (family: 0x6, model: 0xba, stepping: 0x3)",5
+E260,"<*> Performance Events: generic architected perfmon v1, core PMU driver.",5
+E261,<*> perf_event_intel: CPUID marked event: <*> <*> unavailable,30
+E262,<*> perf_event_intel: CPUID marked event: 'instructions' unavailable,5
+E263,<*> ... version: 1,5
+E264,<*> ... bit width: 48,5
+E265,<*> ... generic registers: 6,5
+E266,<*> ... value mask: 0000ffffffffffff,5
+E267,<*> ... max period: 000000007fffffff,5
+E268,<*> ... fixed-purpose events: 0,5
+E269,<*> ... event mask: 000000000000003f,5
+E270,<*> watchdog: disabled (inside virtual machine),5
+E271,<*> NMI watchdog: disabled (cpu0): hardware events not enabled,5
+E272,<*> NMI watchdog: Shutting down hard lockup detector on all cpus,5
+E273,<*> x86: Booting SMP configuration:,5
+E274,"<*> .... node #0, CPUs: #1",5
+E275,<*> #2<6>[ <*> mce: CPU supports 0 MCE banks,5
+E276,<*> #3,5
+E277,"<*> x86: Booted up 1 node, 4 CPUs",5
+E278,<*> smpboot: Total of 4 processors activated <*> BogoMIPS),5
+E279,<*> devtmpfs: initialized,5
+E280,<*> PM: Registering ACPI NVS region [mem 0xbfeff000-0xbfefffff] (4096 bytes),5
+E281,<*> atomic64_test: passed for x86-64 platform with CX8 and with SSE,5
+E282,<*> pinctrl core: initialized pinctrl subsystem,5
+E283,<*> RTC time: <*> date: <*>,5
+E284,<*> NET: Registered protocol family <*>,40
+E285,<*> cpuidle: using governor menu,5
+E286,<*> Simple Boot Flag at 0x36 set to 0x80,5
+E287,<*> ACPI: bus type <*> registered,10
+E288,<*> <*> <*> Hot Plug PCI Controller Driver version: <*>,10
+E289,<*> PCI: MMCONFIG for domain 0000 [bus 00-7f] at [mem 0xf0000000-0xf7ffffff] (base 0xf0000000),5
+E290,<*> PCI: MMCONFIG at [mem 0xf0000000-0xf7ffffff] reserved in E820,5
+E291,<*> pmd_set_huge: Cannot satisfy [mem 0xf0000000-0xf0200000] with a huge-page mapping due to MTRR override.,5
+E292,<*> PCI: Using configuration type 1 for base access,5
+E293,<*> ACPI: Added <*> Device),10
+E294,<*> ACPI: Added _OSI(3.0 _SCP Extensions),5
+E295,<*> ACPI: Added _OSI(Processor Aggregator Device),5
+E296,<*> [Firmware Bug]: ACPI: BIOS _OSI(Linux) query ignored,5
+E297,<*> ACPI: Interpreter enabled,5
+E298,"<*> ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State <*> (20150930/hwxface-580)",10
+E299,<*> ACPI: (supports S0 S1 S4 S5),5
+E300,<*> ACPI: Using IOAPIC for interrupt routing,5
+E301,"<*> PCI: Using host bridge windows from ACPI; if necessary, use ""pci=nocrs"" and report a bug",5
+E302,<*> ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-7f]),5
+E303,<*> acpi PNP0A03:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI],5
+E304,<*> acpi PNP0A03:00: _OSC: platform does not support [AER],5
+E305,<*> acpi PNP0A03:00: _OSC: OS now controls [PCIeHotplug PME PCIeCapability],5
+E306,<*> PCI host bridge to bus 0000:00,5
+E307,<*> pci_bus 0000:00: root bus resource <*> <*> window],40
+E308,<*> pci_bus 0000:00: root bus resource [bus 00-7f],5
+E309,<*> pci 0000:00:07.1: legacy IDE quirk: reg <*> [io <*>,20
+E310,<*> pci 0000:00:07.3: quirk: [io <*> claimed by PIIX4 <*>,10
+E311,<*> pci <*> System wakeup disabled by ACPI,190
+E312,<*> pci <*> PCI bridge to [bus <*>,335
+E313,<*> acpiphp: Slot <*> registered,160
+E314,<*> pci 0000:00:11.0: PCI bridge to [bus 02] (subtractive decode),5
+E315,<*> pci <*> disabling ASPM on pre-1.1 PCIe device. You can enable it with 'pcie_aspm=force',10
+E316,<*> ACPI: PCI Interrupt Link <*> (IRQs 3 4 5 6 7 <*> <*> <*> 14 15),15
+E317,"<*> ACPI: PCI Interrupt Link [LNKB] (IRQs 3 4 5 6 7 9 10 11 14 15) *0, disabled.",5
+E318,<*> ACPI: Enabled 2 GPEs in block 00 to 0F,5
+E319,<*> vgaarb: setting as boot device: PCI:0000:00:0f.0,5
+E320,"<*> vgaarb: device added: PCI:0000:00:0f.0,decodes=io+mem,owns=io+mem,locks=none",5
+E321,<*> vgaarb: loaded,5
+E322,<*> vgaarb: bridge control possible 0000:00:0f.0,5
+E323,<*> SCSI subsystem initialized,5
+E324,<*> usbcore: registered new <*> driver <*>,35
+E325,<*> PCI: Using ACPI for IRQ routing,5
+E326,<*> NetLabel: Initializing,5
+E327,<*> NetLabel: domain hash size = 128,5
+E328,<*> NetLabel: protocols = UNLABELED CIPSOv4,5
+E329,<*> NetLabel: unlabeled traffic allowed by default,5
+E330,"<*> hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0",5
+E331,"<*> hpet0: 16 comparators, 64-bit 14.318180 MHz counter",5
+E332,<*> clocksource: Switched to clocksource <*>,10
+E333,<*> pnp: PnP ACPI init,5
+E334,<*> system 00:00: [io 0x1000-0x103f] could not be reserved,5
+E335,<*> system <*> <*> <*> has been reserved,30
+E336,<*> pnp: PnP ACPI: found 7 devices,5
+E337,<*> pci <*> BAR 15: assigned [mem <*> 64bit pref],10
+E338,<*> pci <*> BAR 6: assigned [mem <*> pref],15
+E339,<*> pci <*> BAR 13: <*> <*> <*> [io size 0x1000],420
+E340,13.152416] pci <*> bridge window <*> <*>,45
+E341,<*> pci <*> bridge window [mem <*> 64bit pref],165
+E342,"<*> TCP <*> hash table entries: <*> (order: 8, 1048576 bytes)",10
+E343,<*> TCP: Hash tables configured (established 131072 bind 65536),5
+E344,<*> pci 0000:00:00.0: Limiting direct PCI/PCI transfers,5
+E345,<*> Unpacking initramfs...,5
+E346,<*> Freeing initrd memory: 17140K (ffff880035e76000 - ffff880036f33000),5
+E347,<*> PCI-DMA: Using software bounce buffering for IO (SWIOTLB),5
+E348,<*> software IO TLB [mem 0xbbed0000-0xbfed0000] (64MB) mapped at [ffff8800bbed0000-ffff8800bfecffff],5
+E349,<*> audit: initializing netlink subsys (disabled),5
+E350,<*> audit: type=2000 <*> initialized,5
+E351,<*> Initialise system trusted keyring,5
+E352,"<*> HugeTLB registered <*> <*> page size, pre-allocated 0 pages",10
+E353,<*> zbud: loaded,5
+E354,<*> VFS: Disk quotas dquot_6.6.0,5
+E355,"<*> VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)",5
+E356,<*> Key type <*> registered,10
+E357,<*> Asymmetric key parser 'x509' registered,5
+E358,<*> Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250),5
+E359,<*> io scheduler <*> registered,10
+E360,<*> io scheduler cfq registered (default),5
+E361,<*> <*> <*> Signaling PME through PCIe PME interrupt,170
+E362,Successfully called chroot().,11
+E363,<*> pci_hotplug: PCI Hot Plug PCI Core version: 0.5,5
+E364,<*> pciehp <*> Slot <*> AttnBtn+ PwrCtrl+ MRL- AttnInd- PwrInd- HotPlug+ Surprise- Interlock- NoCompl+ LLActRep+,160
+E365,<*> pciehp: PCI Express Hot Plug Controller Driver version: 0.4,5
+E366,<*> ACPI: AC Adapter [ACAD] (on-line),5
+E367,<*> input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0,5
+E368,<*> ACPI: Power Button [PWRF],5
+E369,<*> GHES: HEST is not enabled!,5
+E370,"<*> Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled",5
+E371,"<*> 00:05: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A",5
+E372,<*> Non-volatile memory driver v1.3,5
+E373,<*> Linux agpgart interface v0.103,5
+E374,<*> agpgart-intel 0000:00:00.0: Intel 440BX Chipset,5
+E375,<*> agpgart-intel 0000:00:00.0: AGP aperture is 256M @ 0x0,5
+E376,<*> scsi <*> ata_piix,10
+E377,<*> <*> PATA max UDMA/33 cmd <*> ctl <*> bmdma <*> irq <*>,10
+E378,<*> libphy: Fixed MDIO Bus: probed,5
+E379,<*> ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver,5
+E380,<*> <*> <*> PCI platform driver,10
+E381,<*> ehci-pci 0000:02:02.0: EHCI Host Controller,5
+E382,"<*> <*> <*> new USB bus registered, assigned bus number <*>",10
+E383,"<*> ehci-pci 0000:02:02.0: irq 16, io mem 0xfd5ff000",5
+E384,"<*> ehci-pci 0000:02:02.0: USB 2.0 started, EHCI 1.00",5
+E385,"<*> usb <*> New USB device found, <*> <*>",26
+E386,"<*> usb <*> New USB device strings: <*> Product=2, <*>",26
+E387,<*> usb <*> Product: <*> Host Controller,10
+E388,<*> usb <*> Manufacturer: Linux 4.4.13-200.nd7.3.x86_64 <*>,10
+E389,<*> usb usb1: SerialNumber: 0000:02:02.0,5
+E390,<*> hub <*> USB hub found,15
+E391,<*> hub <*> <*> ports detected,15
+E392,<*> ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver,5
+E393,<*> uhci_hcd: USB Universal Host Controller Interface driver,5
+E394,<*> uhci_hcd 0000:02:00.0: UHCI Host Controller,5
+E395,<*> uhci_hcd 0000:02:00.0: detected 2 ports,5
+E396,"<*> uhci_hcd 0000:02:00.0: irq 18, io base 0x00002040",5
+E397,<*> usb usb2: SerialNumber: 0000:02:00.0,5
+E398,<*> usbserial: USB Serial support registered for generic,5
+E399,"<*> i8042: PNP: PS/2 Controller [PNP0303:KBC,PNP0f13:MOUS] at 0x60,0x64 irq 1,12",5
+E400,"<*> serio: i8042 <*> port at 0x60,0x64 irq <*>",10
+E401,No service file found in /etc/avahi/services.,11
+E402,<*> mousedev: PS/2 mouse device common for all mice,5
+E403,<*> rtc_cmos 00:01: rtc core: registered rtc_cmos as rtc0,5
+E404,"<*> rtc_cmos 00:01: alarms up to one month, y3k, 114 bytes nvram, hpet irqs",5
+E405,<*> device-mapper: uevent: version 1.0.3,5
+E406,<*> input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1,5
+E407,<*> device-mapper: ioctl: 4.34.0-ioctl (2015-10-28) initialised: dm-devel@redhat.com,5
+E408,<*> input: VirtualPS/2 VMware VMMouse as <*>,10
+E409,<*> hidraw: raw HID events driver (C) Jiri Kosina,5
+E410,"System host name is set to 'localhost'. This is not a suitable mDNS host name, looking for alternatives.",11
+E411,<*> usbhid: USB HID core driver,5
+E412,<*> drop_monitor: Initializing network drop monitor service,5
+E413,"<*> ata2.00: ATAPI: VMware Virtual IDE CDROM Drive, 00000001, max UDMA/33",5
+E414,<*> Initializing XFRM netlink socket,5
+E415,<*> ata2.00: configured for UDMA/33,5
+E416,<*> usb <*> new full-speed USB device number <*> using uhci_hcd,16
+E417,<*> mip6: Mobile IPv6,5
+E418,"<*> microcode: <*> sig=0xb06a3, pf=0x1, revision=0xffffffff",20
+E419,<*> scsi 1:0:0:0: CD-ROM NECVMWar VMware IDE CDR10 1.00 PQ: 0 ANSI: 5,5
+E420,"<*> microcode: Microcode Update Driver: v2.01 <tigran@aivazian.fsnet.co.uk>, Peter Oruba",5
+E421,<*> AVX2 version of gcm_enc/dec engaged.,5
+E422,<*> AES CTR mode by8 optimization enabled,5
+E423,<*> sr 1:0:0:0: [sr0] scsi3-mmc drive: 1x/1x writer dvd-ram cd/rw xa/form2 cdda tray,5
+E424,<*> cdrom: Uniform CD-ROM driver Revision: 3.20,5
+E425,<*> sr 1:0:0:0: Attached scsi generic sg0 type 5,5
+E426,<*> usb <*> Product: VMware Virtual USB <*>,10
+E427,<*> usb <*> Manufacturer: VMware,11
+E428,<*> input: VMware VMware Virtual USB Mouse as /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-1/2-1:1.0/0003:0E0F:0003.0001/input/input5,5
+E429,"<*> hid-generic 0003:0E0F:0003.0001: input,hidraw0: USB HID v1.10 Mouse [VMware VMware Virtual USB Mouse] on usb-0000:02:00.0-1/input0",5
+E430,<*> hrtimer: interrupt took <*> ns,5
+E431,"<*> usb 2-2: Manufacturer: VMware, Inc.",5
+E432,<*> registered taskstats version 1,5
+E433,<*> Loading compiled-in X.509 certificates,5
+E434,<*> Loaded X.509 cert 'Fedora kernel signing key: 3694d8f4137fb4e587a4ab55207f39e652018af3',5
+E435,<*> zswap: loaded using pool lzo/zbud,5
+E436,<*> Magic number: <*>,5
+E437,<*> rtc_cmos 00:01: setting system clock to <*> <*> UTC <*>,5
+E438,<*> Freeing unused kernel memory: <*> <*> - <*>,15
+E439,<*> Write protecting the kernel read-only data: 12288k,5
+E440,<*> random: systemd urandom read with <*> bits of entropy available,5
+E441,<*> usb 2-2.1: Product: Virtual Bluetooth Adapter,6
+E442,<*> usb 2-2.1: SerialNumber: 000650268328,6
+E443,<*> FUJITSU Extended Socket Network Device Driver - version 1.0 - Copyright (c) 2015 FUJITSU LIMITED,5
+E444,<*> VMware vmxnet3 virtual NIC driver - version <*>-k-NAPI,5
+E445,"<*> vmxnet3 0000:03:00.0: # of Tx queues : 4, # of Rx queues : 4",5
+E446,<*> [drm] Initialized drm 1.1.0 20060810,5
+E447,<*> nvme0n1: p1 p2 p3 p4 < p5 >,5
+E448,<*> [drm] DMA map mode: Using physical TTM page addresses.,5
+E449,<*> [drm] Capabilities:,5
+E450,<*> [drm] Rect copy.,5
+E451,<*> [drm] Cursor.,5
+E452,<*> [drm] Cursor bypass.,5
+E453,<*> [drm] Cursor bypass 2.,5
+E454,<*> [drm] 8bit emulation.,5
+E455,<*> [drm] Alpha cursor.,5
+E456,<*> [drm] 3D.,5
+E457,<*> [drm] Extended Fifo.,5
+E458,<*> [drm] Multimon.,5
+E459,<*> [drm] Pitchlock.,5
+E460,<*> [drm] Irq mask.,5
+E461,<*> [drm] Display Topology.,5
+E462,<*> [drm] GMR.,5
+E463,<*> [drm] Traces.,5
+E464,Network interface enumeration completed.,11
+E465,Bluetooth: BNEP (Ethernet Emulation) ver 1.3,11
+E466,Bluetooth: BNEP filters: protocol multicast,11
+E467,<*> [drm] GMR2.,5
+E468,<*> [drm] Screen Object 2.,5
+E469,<*> [drm] Command Buffers.,5
+E470,<*> [drm] Command Buffers 2.,5
+E471,<*> [drm] Guest Backed Resources.,5
+E472,<*> [drm] DX Features.,5
+E473,<*> [drm] Max GMR ids is 64,5
+E474,<*> [drm] Max number of GMR pages is 65536,5
+E475,<*> [drm] Max dedicated hypervisor surface memory is 0 kiB,5
+E476,<*> [drm] Maximum display memory size is 262144 kiB,5
+E477,<*> [drm] <*> at <*> size is <*> kiB,10
+E478,<*> [drm] global init.,5
+E479,<*> [TTM] Zone <*> Available graphics memory: <*> kiB,10
+E480,<*> [TTM] Initializing pool allocator,5
+E481,<*> [TTM] Initializing DMA pool allocator,5
+E482,<*> [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).,5
+E483,<*> [drm] No driver support for vblank timestamp query.,5
+E484,<*> [drm] Screen Target Display device initialized,5
+E485,<*> [drm] width 800,5
+E486,<*> [drm] height 480,5
+E487,<*> [drm] bpp 32,5
+E488,<*> [drm] Fifo max 0x00040000 min 0x00001000 cap 0x0000077f,5
+E489,<*> [drm] Using command buffers with DMA pool.,5
+E490,<*> [drm] DX: yes.,5
+E491,<*> fbcon: svgadrmfb (fb0) is primary device,5
+E492,<*> Console: switching to colour frame buffer device 100x37,5
+E493,<*> [drm] Initialized vmwgfx 2.9.0 20150810 for 0000:00:0f.0 on minor 0,5
+E494,<*> vmxnet3 0000:03:00.0 eno16777984: renamed from eth0,5
+E495,<*> PM: Starting manual resume from disk,5
+E496,<*> EXT4-fs <*> mounted filesystem with ordered data mode. Opts: (null),6
+E497,<*> random: nonblocking pool is initialized,5
+E498,<*> SELinux: Disabled at runtime.,5
+E499,<*> audit: type=1404 <*> selinux=0 auid=4294967295 ses=4294967295,5
+E500,<*> EXT4-fs (nvme0n1p1): re-mounted. Opts: (null),5
+E501,"<*> vmw_vmci 0000:00:07.7: Found VMCI PCI device at 0x11080, irq 16",5
+E502,<*> vmw_vmci 0000:00:07.7: Using capabilities 0x8000001c,5
+E503,<*> piix4_smbus 0000:00:07.3: SMBus Host Controller not enabled!,5
+E504,<*> Guest personality initialized and is active,5
+E505,"<*> VMCI host device registered (name=vmci, major=10, minor=58)",5
+E506,<*> Initialized host personality,5
+E507,<*> Adding 33030140k swap on /dev/nvme0n1p2. Priority:-1 extents:1 across:33030140k SSFS,5
+E508,<*> ppdev: user-space parallel port driver,5
+E509,<*> Bluetooth: Core ver 2.21,5
+E510,<*> Bluetooth: HCI device and connection manager initialized,5
+E511,<*> Bluetooth: <*> <*> layer initialized,30
+E512,<*> audit: type=1305 <*> <*> old=0 auid=4294967295 ses=4294967295 res=1,5
+E513,<*> Bluetooth: BNEP (Ethernet Emulation) ver 1.3,5
+E514,<*> Bluetooth: BNEP filters: protocol multicast,5
+E515,Server startup complete. Host name is linux.local. Local service cookie is <*>,11
+E516,Bluetooth management interface 1.10 initialized,11
+E517,mcelog: Family 6 Model ba CPU: only decoding architectural errors,11
+E518,New seat seat0.,11
+E519,Watching system buttons on /dev/input/event0 (Power Button),11
+E520,<*> vboxdrv: module verification failed: signature and/or required key missing - tainting kernel,5
+E521,vboxdrv: module verification failed: signature and/or required key missing - tainting kernel,11
+E522,<info> NetworkManager (version <*>-5.nd7.2) is starting...,11
+E523,<info> Read config: /etc/NetworkManager/NetworkManager.conf,11
+E524,<info> WEXT support is enabled,11
+E525,<info> VPN: loaded <*>,55
+E526,"<*> vboxdrv: TSC mode is Invariant, tentative frequency <*> Hz",5
+E527,"vboxdrv: TSC mode is Invariant, tentative frequency <*> Hz",11
+E528,<*> <*> Successfully started.,10
+E529,<*> Successfully started.,22
+E530,<*> VBoxPciLinuxInit,5
+E531,<*> vboxpci: IOMMU not found (not registered),5
+E532,VBoxPciLinuxInit,11
+E533,vboxpci: IOMMU not found (not registered),11
+E534,Starting iceventd: [ 确定 ],11
+E535,Started polkitd version 0.112,11
+E536,started daemon version 0.6.39,11
+E537,<info> Acquired D-Bus service com.redhat.ifcfgrh1,11
+E538,"<info> Loaded plugin <*> (c) 2007 - 2013 Red Hat, Inc. To report bugs please use the NetworkManager mailing list.",22
+E539,<info> parsing <*> ...,22
+E540,<info> monitoring kernel firmware directory '/lib/firmware'.,11
+E541,<info> <*> hardware radio set enabled,22
+E542,<info> Loaded device plugin: <*>,44
+E543,"<*> vmxnet3 0000:03:00.0 eno16777984: intr type 3, mode 0, 5 vectors allocated",6
+E544,<info> <*> enabled by radio killswitch; enabled by state file,33
+E545,<info> Networking is enabled by state file,11
+E546,<info> <*> carrier is <*>,22
+E547,<info> <*> new <*> device (driver: <*> ifindex: <*>,22
+E548,<info> <*> exported as <*>,22
+E549,<info> (eno16777984): preparing device,15
+E550,<info> use BlueZ version 5,11
+E551,<info> ModemManager available in the bus,11
+E552,"vmxnet3 0000:03:00.0 eno16777984: intr type 3, mode 0, 5 vectors allocated",15
+E553,<warn> Couldn't find support for device at '/sys/devices/pci0000:00/0000:00:15.0/0000:03:00.0': not supported by any plugin,11
+E554,Virtual1,13
+E555,i = Virtual1,13
+E556,800x600 2560x1600 1920x1440 1856x1392 1792x1344 1920x1200 1600x1200 1680x1050 1400x1050 1280x1024 1440x900 1280x960 1360x768 1280x800 1152x864 1280x768 1024x768 640x480,11
+E557,New session <*> of user <*>,29
+E558,Activating service name='org.a11y.atspi.Registry',25
+E559,Successfully activated service 'org.a11y.atspi.Registry',25
+E560,SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry,25
+E561,<*> fuse init (API version 7.23),5
+E562,fuse init (API version 7.23),11
+E563,<info> startup complete,11
+E564,A connection to the bus can't be made,13
+E565,Removed session <*>,17
+E566,<*> <*> INFO: Starting imsettings-daemon...,12
+E567,<*> IMSettings-Daemon[1007]: INFO: <*>,4
+E568,"<*> <*> INFO: [MODULES=mate-gsettings, gsettings, qt]",12
+E569,dconf: unable to create file '/home/user/.cache/dconf/user': 权限不够. dconf will not work properly.,22
+E570,failed to unlock login keyring on startup,12
+E571,pulseaudio] alsa-util.c: Disabling timer-based scheduling because running inside a VM.,22
+E572,Successfully made thread <*> of process <*> (/usr/bin/pulseaudio) owned by '1000' RT at priority 5.,22
+E573,alsa-sink-ES1371/1] alsa-sink.c: ALSA 提醒我们在该设备中写入新数据，但实际上没有什么可以写入的！,11
+E574,<*> <*> 这很可能是 ALSA 驱动程序 'snd_ens1371' 中的一个 bug。请向 ALSA 开发人员报告这个问题。,15
+E575,<*> <*> 提醒我们设置 POLLOUT -- 但结果是 snd_pcm_avail() 返回 0 或者另一个小于最小可用值的数值。,15
+E576,<*> Bluetooth: RFCOMM ver 1.11,5
+E577,udisks daemon version 2.1.3 starting,11
+E578,"Error probing device: Error sending ATA command IDENTIFY PACKET DEVICE to /dev/sr0: ATA command failed: error=0x01 count=0x02 status=0x50 (g-io-error-quark, 0)",11
+E579,Acquired the name org.freedesktop.UDisks2 on the system message bus,11
+E580,goa-daemon-Message: goa-daemon version 3.14.2 starting,12
+E581,<*> libgoaidentity-WARNING **: GoaKerberosIdentityManager: Using polling for change notification for credential cache type 'KEYRING',12
+E582,Volume monitor alive,12
+E583,alsa-source-ES1371/1] alsa-source.c: ALSA 提醒我们从该设备中读取新数据，但实际上没有什么可以读取的！,4
+E584,(wnck-applet:1477): <*> **: <*> assertion <*> <*> failed,22
+E585,<*> GLib-GObject-WARNING **: invalid (NULL) pointer instance,120
+E586,<*> Gtk-WARNING **: <*> missing action <*>,324
+E587,(separator-applet:1473): <*> **: <*> assertion <*> <*> failed,11
+E588,(notification-area-applet:1480): <*> **: <*> assertion <*> <*> failed,11
+E589,<*> WARNING **: need to free the control here,12
+E590,<*> Gtk-WARNING **: <*> <*> <*> Item: missing action <*>,48
+E591,(clock-applet:1478): <*> **: <*> assertion <*> <*> failed,11
+E592,<*> Gtk-WARNING **: <*> <*> Item: missing action <*>,48
+E593,system] Activating service <*> (using servicehelper),24
+E594,Mounted <*> at <*> on behalf of uid <*>,12
+E595,index_parse.c:191: indx_parse(): error opening <*>,24
+E596,WARNING: Application 'mate-xlogin-sound.desktop' failed to register before timeout,12
+E597,The <*> <*> was already initialized,48
+E598,"<*> <*> INFO: Attempting to switch IM to IBus [lang=zh_CN.UTF-8, update=false]",12
+E599,<*> <*> INFO: no need to invoke any auxiliary process for IBus,12
+E600,<*> <*> INFO: Starting the main process for IBus [lang:zh_CN.UTF-8],12
+E601,"<*> <*> INFO: Started IBus: [process: /usr/bin/ibus-daemon -r --xim, lang: zh_CN.UTF-8, pid: <*> id: 48, time: <*>",12
+E602,<*> <*> <*> INFO: Setting up <*> as <*> immodule,36
+E603,warning] [Gtk] gtk_disable_setlocale() must be called before gtk_init(),12
+E604,warning] <*> SimpleSock: Send error for socket <*> 32[断开的管道],134
+E605,<*> OBEX daemon 5.23,12
+E606,Unable to init server: Could not connect: Connection refused,24
+E607,<*> Gtk-CRITICAL **: <*> assertion <*> <*> failed,348
+E608,loading <*>,96
+E609,Exiting,24
+E610,"Exception AttributeError: ""'NoneType' object has no attribute 'stdout'"" in <bound method Tee.__del__ of <__main__.Tee object at <*> ignored",12
+E611,<*> metadata will expire after <*> seconds and will be refreshed now,4
+E612,WARNING: Child process 1426 was already dead.,1
+E613,5590.552273] EXT4-fs (nvme0n1p3): recovery complete,1
+E614,EXT4-fs (nvme0n1p3): recovery complete,1
+E615,EXT4-fs (nvme0n1p3): mounted filesystem with ordered data mode. Opts: (null),1
+E616,6575.572086] sched: RT throttling activated,1
+E617,sched: RT throttling activated,1
+E618,httpd: Syntax error on line 353 of /etc/httpd/conf/httpd.conf: Syntax error on line <*> of <*> <*> <*> <*> <*> <*>,7
+E619,"kill: cannot find process """"",7
+E620,"httpd.service: control process exited, code=exited status=1",7
+E621,Failed to start The Apache HTTP Server.,7
+E622,"1717407977.217443]: IMSettings-Daemon[1007]: INFO: Sent a signal to stop /usr/bin/ibus-daemon [pid: 1914, time: 2024-06-03T09:46:17.217431Z]",1
+E623,1717407977.217559]: IMSettings-Daemon[1007]: INFO: imsettings-daemon is shut down.,1
+E624,<warn> error requesting auth for <*> (4) GDBus.Error:org.freedesktop.DBus.Error.NoReply: Message did not receive a reply (timeout by message bus),8
+E625,random: nonblocking pool is initialized,7
+E626,13.917013] pci <*> bridge window <*> <*>,45
+E627,<*> memory <*> hash matches,2
+E628,Starting MySQL[ 确定 ],10
+E629,<*> IMSettings-Daemon[1302]: INFO: <*>,16
+E630,Endpoint <*> sender=:1.35 <*>,24
+E631,<*> GLib-GObject-CRITICAL **: <*> assertion <*> <*> failed,275
+E632,"<*> atkbd serio0: Unknown key <*> (translated set 2, code 0x6d on isa0060/serio0).",2
+E633,<*> atkbd serio0: Use 'setkeycodes 6d <keycode>' to make it known.,2
+E634,"atkbd serio0: Unknown key <*> (translated set 2, code 0x6d on isa0060/serio0).",8
+E635,atkbd serio0: Use 'setkeycodes 6d <keycode>' to make it known.,8
+E636,The canary thread is apparently starving. Taking action.,4
+E637,Demoting known real-time threads.,4
+E638,Successfully demoted thread <*> of process <*> <*>,16
+E639,Demoted 4 threads.,4
+E640,(to <*> user on <*>,27
+E641,<info> <*> requested (sleeping: no enabled: <*>,8
+E642,<info> <*>,8
+E643,Received packet from invalid interface.,12
+E644,10038.217587] IPv6: ADDRCONF(NETDEV_UP): eno16777984: link is not ready,1
+E645,IPv6: ADDRCONF(NETDEV_UP): eno16777984: link is not ready,4
+E646,"10038.491163] usb 2-2.1: USB disconnect, device number 4",1
+E647,"usb 2-2.1: USB disconnect, device number 4",4
+E648,"system] Rejected send message, 11 matched rules; type=""error"", sender="":1.35"" (uid=1000 pid=1444 comm=""/usr/bin/pulseaudio --start --log-target=syslog "") interface=""(unset)"" member=""(unset)"" error name=""org.bluez.MediaEndpoint1.Error.NotImplemented"" requested_reply=""0"" destination="":1.2"" (uid=0 pid=627 comm=""/usr/libexec/bluetooth/bluetoothd "")",16
+E649,error opening USB device 'descriptors' file,4
+E650,usb 2-2.1: new full-speed USB device number 5 using uhci_hcd,4
+E651,"usb 2-2.1: New USB device found, idVendor=0e0f, idProduct=0008",4
+E652,"usb 2-2.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3",4
+E653,usb 2-2.1: Product: Virtual Bluetooth Adapter,4
+E654,usb 2-2.1: <*> <*>,8
+E655,FAILED SU (to root) user on pts/0,12
+E656,Received response from host <*> with invalid source port <*> on interface 'eno16777984.0',166
+E657,13.482659] pci <*> bridge window <*> <*>,45
+E658,Using <*> /usr/local/myapp/apache-tomcat-7.0.57,12
+E659,Using CATALINA_TMPDIR: /usr/local/myapp/apache-tomcat-7.0.57/temp,6
+E660,Using JRE_HOME: /usr/java/java-se-7u75-ri,6
+E661,Using CLASSPATH: /usr/local/myapp/apache-tomcat-7.0.57/bin/bootstrap.jar:/usr/local/myapp/apache-tomcat-7.0.57/bin/tomcat-juli.jar,6
+E662,Tomcat started.,6
+E663,<*> IMSettings-Daemon[1408]: INFO: <*>,12
+E664,Endpoint registered: <*> <*>,14
+E665,<*> has expired and will be refreshed.,12
+E666,<*> pci 0000:00:11.0: bridge window <*> <*>,4
+E667,<*> pci 0000:00:15.0: bridge window <*> <*>,4
+E668,<*> pci 0000:00:15.1: bridge window <*> <*>,4
+E669,<*> pci 0000:00:15.2: bridge window <*> <*>,4
+E670,<*> pci <*> bridge window [mem <*>,58
+E671,<*> pci <*> bridge window [io <*>,16
+E672,hrtimer: interrupt took <*> ns,3
+E673,<*> IMSettings-Daemon[1399]: INFO: <*>,8
+E674,"<warn> (eno16777984): DHCP client pid <*> didn't exit, will kill it.",4
+E675,13.853421] clockevents clockevent37: hash matches,1
+E676,13.853452] tty tty9: hash matches,1
+E677,13.853661] acpi PNP0501:0d: hash matches,1
+E678,/usr/sbin/alsactl: load_state:1729No soundcards found...,1
+E679,(lightdm:886): GLib-GIO-CRITICAL **: g_dbus_connection_call_sync_internal: assertion 'object_path != NULL && g_variant_is_object_path (object_path)' failed,1
+E680,<*> IMSettings-Daemon[1386]: INFO: <*>,4
+E681,Gkm: unable to create keyring dir: /root/.local/share/keyrings,2
+E682,Gkm: couldn't write to file: /root/.local/share/keyrings/login.keyring: 没有那个文件或目录,1
+E683,"Gkm: couldn't delete aborted file, data may be lost: /root/.local/share/keyrings/login.keyring: 没有那个文件或目录",1
+E684,couldn't create login keyring: An error occurred on the device,1
+E685,Disabling timer-based scheduling because running inside a VM.,2
+E686,ALSA <*>,2
+E687,这很可能是 ALSA 驱动程序 'snd_ens1371' 中的一个 bug。请向 ALSA 开发人员报告这个问题。,2
+E688,提醒我们设置 POLLOUT -- 但结果是 snd_pcm_avail() 返回 0 或者另一个小于最小可用值的数值。,2
+E689,Failed to <*> <*> <*> '/root/.config/pulse/cookie': 没有那个文件或目录,2
+E690,Failed to <*> <*> <*> '/root/.pulse-cookie': 没有那个文件或目录,2
+E691,1918x878 2560x1600 1920x1440 1856x1392 1792x1344 1920x1200 1600x1200 1680x1050 1400x1050 1280x1024 1440x900 1280x960 1360x768 1280x800 1152x864 1280x768 1024x768 800x600 640x480,2
+E692,<*> IMSettings-Daemon[2564]: INFO: <*>,4
+E693,RFCOMM server failed for <*> <*> <*> rfcomm_bind: Address already in use (98),2
+E694,RFCOMM server failed for <*> <*> rfcomm_bind: Address already in use (98),4
+E695,RFCOMM server failed for Synchronization: rfcomm_bind: Address already in use (98),1
+E696,(lightdm:886): WARNING **: Error using VT_WAITACTIVE 1 on /dev/tty0: Interrupted system call,1
+E697,warning] [vmusr] SimpleSock: Socket 7 closed by peer.,1

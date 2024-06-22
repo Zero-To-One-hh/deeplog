@@ -201,6 +201,7 @@ class LogParser:
         return retLogClust
 
     def getTemplate(self, seq1, seq2):
+
         assert len(seq1) == len(seq2)
         retVal = []
 
@@ -302,6 +303,7 @@ class LogParser:
             # Match no existing log cluster
             if matchCluster is None:
                 newCluster = Logcluster(logTemplate=logmessageL, logIDL=[logID])
+
                 logCluL.append(newCluster)
                 self.addSeqToPrefixTree(rootNode, newCluster)
 
@@ -352,10 +354,12 @@ class LogParser:
                 try:
                     match = regex.search(tmp)
                     message = [match.group(header) for header in headers]
+                    message[5]=message[5].lstrip('^[*+? ]+')#去除开头的空格*+？以方便后面正则处理
                     log_messages.append(message)
                     linecount += 1
                 except Exception as e:
                     print("[Warning] Skip line: " + line)
+
         logdf = pd.DataFrame(log_messages, columns=headers)
         logdf.insert(0, "LineId", None)
         logdf["LineId"] = [i + 1 for i in range(linecount)]
@@ -378,6 +382,7 @@ class LogParser:
 
         print(headers)
         regex = re.compile("^" + regex + "$")
+
         return headers, regex
 
     def get_parameter_list(self, row):

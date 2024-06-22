@@ -12,7 +12,7 @@ from logparser.Drain import LogParser
 
 input_dir = '../data/'  # The input directory of log file
 output_dir = 'result/'  # The output directory of parsing results
-log_file = 'messages.log'  # The input log file name
+log_file = 'messages.txt'  # The input log file name
 # log_format = '<Month> <Day> <Time> <Level> <Compoent>:<Content>' # Define log format to split message fields
 log_format = '<Month> <Day> <Time> <User> <Compoent>:<Content>'  # Define log format to split message fields
 # Regular expression list for optional preprocessing (default: [])
