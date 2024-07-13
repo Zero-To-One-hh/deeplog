@@ -354,7 +354,7 @@ class LogParser:
                 try:
                     match = regex.search(tmp)
                     message = [match.group(header) for header in headers]
-                    message[5]=message[5].lstrip('^[*+? ]+')#去除开头的空格*+？以方便后面正则处理
+                    message[5]=message[5].lstrip(' ')#去除开头的空格*+？以方便后面正则处理
                     log_messages.append(message)
                     linecount += 1
                 except Exception as e:

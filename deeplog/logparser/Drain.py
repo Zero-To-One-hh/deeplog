@@ -344,9 +344,9 @@ class LogParser:
         linecount = 0
         with open(log_file, "r",encoding='utf-8',errors='ignore') as fin:
             for line in fin.readlines():
-                tmp=line.strip()#移出首尾空格
+                tmp=line.strip() #移出首尾空格
                 tmp1=tmp.split()
-                if len(tmp1)==0 or tmp1[0] not in month :
+                if len(tmp1) ==0 or tmp1[0] not in month :
                     print("[Warning] Skip line: " + line)
                     continue
                 try:

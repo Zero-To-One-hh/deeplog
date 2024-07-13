@@ -49,8 +49,8 @@ options['lr_step'] = (300, 350)
 options['lr_decay_ratio'] = 0.1
 
 import time
-str=time.strftime('%Y_%m_%d', time.localtime())
-# str="2024_06_13_20_45_50"
+# str=time.strftime('%Y_%m_%d', time.localtime())
+str="2024_06_15"
 
 options['resume_path'] = None
 options['model_name'] = "deeplog"
