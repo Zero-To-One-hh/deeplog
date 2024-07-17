@@ -173,6 +173,9 @@ async def device_trust_level_model(request: DeviceTrustLevelRequest):
 
         EventId = Parser.process_data(logMessage)
 
+        with open('event_ids.txt', 'a') as file:
+            file.write(f'{EventId}\n')
+
         device_logs[request.deviceId].append(EventId)
 
         print(device_logs[request.deviceId])
