@@ -18,35 +18,16 @@ import time
 import httpx
 
 # 配置参数
-options = {
-    # 'train_data': './data/Kylin/train',
-    # 'val_data': './data/Kylin/valid',
-    # 'test_data': './data/Kylin/test',
-    # 'data_dir': './data/',
-    'window_size': 10,
-    'device': "cpu",
-    'sample': "sliding_window",
-    'sequentials': True,
-    'quantitatives': False,
-    'semantics': False,
-    'feature_num': 1,  # sequentials, quantitatives, semantics的总和
-    'input_size': 1,
-    'hidden_size': 64,
-    'num_layers': 2,
-    'num_classes': 676,
-    'batch_size': 2048,
-    'accumulation_step': 1,
-    'optimizer': 'adam',
-    'lr': 0.001,
-    'max_epoch': 370,
-    'lr_step': (300, 350),
-    'lr_decay_ratio': 0.1,
-    'resume_path': None,
-    'model_name': "deeplog",
-    'save_dir': f"./result/deeplog{time.strftime('%Y_%m_%d', time.localtime())}/",
-    'model_path': "../deeplog2024_06_15/deeplog_bestloss.pth",
-    'num_candidates': 9,
-}
+options = {'window_size': 10, 'device': "cpu", 'sample': "sliding_window", 'sequentials': True, 'quantitatives': False,
+           'semantics': False, 'feature_num': 1, 'input_size': 1, 'hidden_size': 64, 'num_layers': 2,
+           'num_classes': 676, 'batch_size': 2048, 'accumulation_step': 1, 'optimizer': 'adam', 'lr': 0.001,
+           'max_epoch': 370, 'lr_step': (300, 350), 'lr_decay_ratio': 0.1, 'resume_path': None, 'model_name': "deeplog",
+           'save_dir': f"./result/deeplog{time.strftime('%Y_%m_%d', time.localtime())}/",
+           'model_path': "../deeplog2024_06_15/deeplog_bestloss.pth", 'num_candidates': 9}
+
+# Model Parameters
+
+# Predict Parameters
 
 app = FastAPI()
 
@@ -119,20 +100,48 @@ class Predicter:
 
 # 预先加载模型
 try:
-    model = deeplog(input_size=options['input_size'], hidden_size=options['hidden_size'],
-                    num_layers=options['num_layers'], num_keys=options['num_classes'])
-    model.load_state_dict(torch.load(options['model_path'])['state_dict'])
-    predicter = Predicter(model, options)
+    Model = deeplog(input_size=options['input_size'],
+                    hidden_size=options['hidden_size'],
+                    num_layers=options['num_layers'],
+                    num_keys=options['num_classes'])
+    Model.load_state_dict(torch.load(options['model_path'])['state_dict'])
+    Model.to(options['device'])
+    Model.eval()
     logger.info("Model loaded successfully")
 except Exception as e:
     logger.error(f"Error loading model: {e}")
     raise
 
 
+def predict_single_log(log):
+    if len(log) != 11:
+        raise ValueError("The input log must be a list of length 11.")
+
+    window_size = options['window_size']
+    seq = list(map(lambda n: n - 1, log))
+    for i in range(len(seq) - window_size):
+        seq0 = seq[i:i + window_size]
+        label = seq[i + window_size]
+        seq1 = [0] * options['num_classes']
+        log_counter = Counter(seq0)
+        for key in log_counter:
+            seq1[key] = log_counter[key]
+
+        seq0 = torch.tensor(seq0, dtype=torch.float).view(-1, window_size, options['input_size']).to(options['device'])
+        seq1 = torch.tensor(seq1, dtype=torch.float).view(-1, options['num_classes'], options['input_size']).to(
+            options['device'])
+        label = torch.tensor(label).view(-1).to(options['device'])
+        output = Model(features=[seq0, seq1], device=options['device'])
+        predicted = torch.argsort(output, 1)[0][-options['num_candidates']:]
+        if label not in predicted:
+            return "Anomaly"
+    return "Normal"
+
+
 def predict_trust_level(deviceId):
     try:
         options['test_data'] = list(device_logs[deviceId])
-        trust_level = predicter.predict(options['test_data'])
+        trust_level = predict_single_log(options['test_data'])
         return trust_level
     except Exception as e:
         logger.error(f"Error in predict_trust_level: {e}")

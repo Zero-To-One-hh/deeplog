@@ -3,7 +3,9 @@ import pandas as pd
 from tqdm import tqdm
 
 para = {"template": "G:/item/deeplog/logparser/result/messages.log_templates.csv", "structured_file": "./test.csv"}
-
+"""
+后续可以将转义后的模板单独存放在一个文件中，这样可以提升一些速度
+"""
 
 # 读取日志条
 def data_log(log):
@@ -16,16 +18,26 @@ def data_log(log):
     return datas
 
 
+#转义特殊字符(除*号外)
+def escape_special_characters(pattern):
+    special_characters = ".*^$+?{}[]()|\\"
+    escaped_pattern = ""
+    for idx,char in enumerate(pattern):
+        if char in special_characters:
+            if char=='*':
+                if idx>0 and pattern[idx-1]=='<' and pattern[idx+1]=='>':
+                    escaped_pattern += char
+                    continue
+            escaped_pattern += "\\" + char
+        else:
+            escaped_pattern += char
+    return escaped_pattern
 def convert_template_to_regex(template):
     # template = template.replace('<*>', '.*')
-    # 再处理 **
-    template = template.replace('**', r'\*\*')
-    # 处理单个左括号或右括号的情况
-    template = template.replace('(', r'\(')
-    template = template.replace(')', r'\)')
-    template = template.replace('[', r'\[')
-    template = template.replace(']', r'\]')
+    template = escape_special_characters(template)
+
     template = template.replace('<*>', '\S+')
+
     return template
 
 

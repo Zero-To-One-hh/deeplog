@@ -51,4 +51,4 @@ file1_path = 'messages.log_structured.csv'
 file2_path = 'event_ids.txt'
 
 # 比较文件前1000行
-compare_files(file1_path, file2_path, max_lines=1751, encoding='utf-8')
+compare_files(file1_path, file2_path, max_lines=2251, encoding='utf-8')

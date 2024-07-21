@@ -3,6 +3,7 @@
 
 import argparse
 import sys
+
 sys.path.append('../')
 
 from logdeep.models.lstm import deeplog, loganomaly, robustlog
@@ -10,13 +11,12 @@ from logdeep.tools.predict import Predicter
 from logdeep.tools.train import Trainer
 from logdeep.tools.utils import *
 
-
 # Config Parameters
 
 options = dict()
-options['train_data']='./data/Kylin/train'
-options['val_data']='./data/Kylin/valid'
-options['test_data']='./data/Kylin/test'
+options['train_data'] = './data/Kylin/train'
+options['val_data'] = './data/Kylin/valid'
+options['test_data'] = './data/Kylin/test'
 options['data_dir'] = './data/'
 options['window_size'] = 10
 options['device'] = "cpu"
@@ -36,7 +36,7 @@ options['feature_num'] = sum(
 options['input_size'] = 1
 options['hidden_size'] = 64
 options['num_layers'] = 2
-options['num_classes'] =676
+options['num_classes'] = 676
 
 # Train
 options['batch_size'] = 2048
@@ -49,15 +49,16 @@ options['lr_step'] = (300, 350)
 options['lr_decay_ratio'] = 0.1
 
 import time
+
 # str=time.strftime('%Y_%m_%d', time.localtime())
-str="2024_06_15"
+str = "2024_06_15"
 
 options['resume_path'] = None
 options['model_name'] = "deeplog"
-options['save_dir'] = "./result/deeplog"+str+"/"
+options['save_dir'] = "./result/deeplog" + str + "/"
 
 # Predict
-options['model_path'] = "./result/deeplog"+str+"/deeplog_bestloss.pth"
+options['model_path'] = "./result/deeplog" + str + "/deeplog_bestloss.pth"
 options['num_candidates'] = 9
 
 seed_everything(seed=1234)
@@ -80,9 +81,10 @@ def predict():
     predicter = Predicter(Model, options)
     predicter.predict_unsupervised()
 
-#未参考语义信息和频率信息
-#训练时使用的全是正常数据
-#预测时使用的既有正常也有异常数据
+
+# 未参考语义信息和频率信息
+# 训练时使用的全是正常数据
+# 预测时使用的既有正常也有异常数据
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('mode', choices=['train', 'test'])

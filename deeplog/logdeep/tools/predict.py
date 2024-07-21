@@ -6,6 +6,7 @@ import os
 import sys
 import time
 from collections import Counter
+
 sys.path.append('../../')
 
 import numpy as np
@@ -26,7 +27,7 @@ def generate(name):
     window_size = 10
     hdfs = {}
     length = 0
-    with open( name, 'r') as f:
+    with open(name, 'r') as f:
         for ln in f.readlines():
             ln = list(map(lambda n: n - 1, map(int, ln.strip().split())))
             ln = ln + [-1] * (window_size + 1 - len(ln))
@@ -64,7 +65,7 @@ class Predicter():
         FP = 0
         # Test the model
         start_time = time.time()
-        num=0
+        num = 0
         with torch.no_grad():
             for line in tqdm(test_normal_loader.keys()):
                 for i in range(len(line) - self.window_size):
@@ -86,7 +87,7 @@ class Predicter():
                     if label not in predicted:
                         FP += test_normal_loader[line]
                         break
-                    num+=1
+                    num += 1
         # with torch.no_grad():
         #     for line in tqdm(test_abnormal_loader.keys()):
         #         for i in range(len(line) - self.window_size):
@@ -120,7 +121,7 @@ class Predicter():
         #     .format(FP, FN, P, R, F1))
         print(
             'false positive (FP): {},准确率: {:.3f}%'
-            .format(FP,100*(num-FP)/num))
+            .format(FP, 100 * (num - FP) / num))
         print('Finished Predicting')
         elapsed_time = time.time() - start_time
         print('elapsed_time: {}'.format(elapsed_time))
@@ -146,7 +147,7 @@ class Predicter():
             features = []
             for value in log.values():
                 features.append(value.clone().to(self.device))
-            output = self.model(features=features, device=self.device)
+            output = self.model(features=eatures, device=self.device)
             output = F.sigmoid(output)[:, 0].cpu().detach().numpy()
             # predicted = torch.argmax(output, dim=1).cpu().numpy()
             predicted = (output < 0.2).astype(int)
