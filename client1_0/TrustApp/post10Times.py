@@ -1,6 +1,6 @@
 import httpx
 
-numbers = 21535
+numbers = 10
 
 
 def send_post_request(client, url, payload):

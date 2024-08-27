@@ -20282,3 +20282,13 @@
 2024-07-21 16:51:36,996 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Normal"}
 2024-07-21 16:51:37,203 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
 2024-07-21 16:51:37,411 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Normal"}
+2024-08-27 23:59:51,107 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
+2024-08-27 23:59:51,168 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Normal"}
+2024-08-27 23:59:51,231 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
+2024-08-27 23:59:51,270 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Normal"}
+2024-08-27 23:59:51,309 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
+2024-08-27 23:59:51,351 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
+2024-08-27 23:59:51,389 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
+2024-08-27 23:59:51,450 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
+2024-08-27 23:59:51,512 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
+2024-08-27 23:59:51,557 INFO Received data from 127.0.0.1: {"deviceId":"device123","trustLevel":"Anomaly"}
