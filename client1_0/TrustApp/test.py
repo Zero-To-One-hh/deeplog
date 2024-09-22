@@ -1,63 +1,84 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+import time
+import os
+import json
+import requests  # Import requests library for sending HTTP requests
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
 
-import sys
-import torch
-from collections import Counter
-from logdeep.models.lstm import deeplog
-from logdeep.tools.utils import seed_everything
+log_file = "./output.log"  # Log file to monitor
+log_file = os.path.abspath(log_file)  # Convert to absolute path
 
-sys.path.append('../')
+API_URL = "http://localhost:8000/deviceTrustLevelModel"  # The API endpoint to send requests to
 
-# Config Parameters
-options = dict()
-options['window_size'] = 10
-options['device'] = "cpu"
+# Custom event handler
+class LogHandler(FileSystemEventHandler):
+    def __init__(self):
+        self.last_position = 0  # Record the last read position
 
-# Model Parameters
-options['input_size'] = 1
-options['hidden_size'] = 64
-options['num_layers'] = 2
-options['num_classes'] = 676
+    def on_modified(self, event):
+        # Debug info to confirm event is triggered
+        print("File modified event triggered.")
 
-# Predict Parameters
-options['model_path'] = "../deeplog2024_06_15/deeplog_bestloss.pth"
-options['num_candidates'] = 9
+        # Check if this is the file we are monitoring
+        if not event.is_directory and os.path.abspath(event.src_path) == log_file:
+            print("Observer is running...")
 
-# Initialize seed for reproducibility
-seed_everything(seed=1234)
+            # Open the file, move to the last read position
+            with open(log_file, "r") as file:
+                file.seek(self.last_position)  # Start from the last read position
 
-# Initialize model globally
-Model = deeplog(input_size=options['input_size'],
-                hidden_size=options['hidden_size'],
-                num_layers=options['num_layers'],
-                num_keys=options['num_classes'])
-Model.load_state_dict(torch.load(options['model_path'])['state_dict'])
-Model.to(options['device'])
-Model.eval()
+                # Read new log entries
+                new_entries = file.readlines()
+                self.last_position = file.tell()  # Update offset
 
-def predict_single_log(log):
-    window_size = options['window_size']
-    seq = list(map(lambda n: n - 1, map(int, log.strip().split())))
-    for i in range(len(seq) - window_size):
-        seq0 = seq[i:i + window_size]
-        label = seq[i + window_size]
-        seq1 = [0] * options['num_classes']
-        log_counter = Counter(seq0)
-        for key in log_counter:
-            seq1[key] = log_counter[key]
+                # Process new log entries
+                for entry in new_entries:
+                    entry = entry.strip()
+                    if not entry:
+                        continue  # Skip empty lines
+                    # Here, parse the log entry to extract required fields
+                    try:
+                        # Assuming each log entry is a JSON object
+                        log_data = json.loads(entry)
 
-        seq0 = torch.tensor(seq0, dtype=torch.float).view(-1, window_size, options['input_size']).to(options['device'])
-        seq1 = torch.tensor(seq1, dtype=torch.float).view(-1, options['num_classes'], options['input_size']).to(options['device'])
-        label = torch.tensor(label).view(-1).to(options['device'])
-        output = Model(features=[seq0, seq1], device=options['device'])
-        predicted = torch.argsort(output, 1)[0][-options['num_candidates']:]
-        if label not in predicted:
-            return "Anomaly"
-    return "Normal"
+                        data = {
+                            "browserId": log_data.get("browserId", ""),
+                            "logId": log_data.get("logId", ""),
+                            "deviceMac": log_data.get("deviceMac", ""),
+                            "deviceIp": log_data.get("deviceIp", ""),
+                            "accessPort": log_data.get("accessPort", 0),
+                            "serviceId": log_data.get("serviceId", ""),
+                            "accessedIp": log_data.get("accessedIp", ""),
+                            "rawLog": entry,  # Include the raw log entry
+                            "timestamp": log_data.get("timestamp", ""),
+                        }
 
-if __name__ == "__main__":
-    # Example usage for prediction
-    log_example = "1 2 3 4 5 6 7 8 9 10 11"  # Replace this with actual log input
-    result = predict_single_log(log_example)
-    print(result)
+                        # Send POST request to the API endpoint
+                        response = requests.post(API_URL, json=data)
+
+                        if response.status_code == 200:
+                            print("Request successful.")
+                        else:
+                            print(f"Request failed with status code {response.status_code}: {response.text}")
+
+                    except json.JSONDecodeError:
+                        print(f"Failed to parse log entry as JSON: {entry}")
+                    except Exception as e:
+                        print(f"An error occurred: {e}")
+
+# Create observer and start
+observer = Observer()
+event_handler = LogHandler()
+
+# Monitor the directory containing the log file
+observer.schedule(event_handler, path=os.path.dirname(log_file), recursive=False)
+observer.start()
+
+try:
+    while True:
+        time.sleep(1)
+except KeyboardInterrupt:
+    print("The last position is:", event_handler.last_position)
+    observer.stop()
+
+observer.join()
