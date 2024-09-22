@@ -5,12 +5,11 @@ from collections import Counter, deque, defaultdict
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import httpx
 
-from client1_0.TrustApp import Parser
+from TrustApp import Parser
 
 sys.path.append("..")
 

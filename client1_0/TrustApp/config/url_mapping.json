@@ -1,0 +1,10 @@
+{
+    "/v1/app/list": {
+        "serviceId": 101,
+        "logId": 11
+    },
+    "/v1/app/details": {
+        "serviceId": 102,
+        "logId": 12
+    }
+}
