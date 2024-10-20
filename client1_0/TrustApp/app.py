@@ -4,6 +4,10 @@ import sys
 import datetime
 from fastapi import FastAPI, HTTPException, Request, Query
 from collections import defaultdict, deque
+
+from h11._abnf import request_line
+from pydantic import BaseModel
+
 from models import DeviceTrustLevelRequest, DeviceTrustLevelResponse
 from config import config
 from logger import logger
@@ -49,100 +53,54 @@ def predict_triplet_log_sequence(triplet):
         raise HTTPException(status_code=500, detail="预测失败")
 
 
-@app.post("/deviceTrustLevelModel", response_model=DeviceTrustLevelResponse)
-async def process_log_entry(request: Request):
-    try:
-        url = request.url.path
-        serviceId, logId = parse_url(url)
+class LogEntry(BaseModel):
+    time_local: str
+    remote_addr: str
+    remote_user: str
+    request: str
+    status: str
+    body_bytes_sent: str
+    http_referer: str
+    http_user_agent: str
+    http_x_forwarded_for: str
 
+
+@app.post("/deviceTrustLevelModel", response_model=DeviceTrustLevelResponse)
+async def process_log_entry(request: LogEntry):
+    try:
+        # 获取请求的 URL 和 user-agent
+        url = str(request.request)
+        user_agent = str(request.http_user_agent)
+        source_ip = request.remote_addr
+
+        # 调用你的 URL 解析逻辑
+        parts = url.split(' ')
+        serviceId, logId = parse_url(parts[1])
+
+        # 将 logId 写入文件
         with open('event_ids.txt', 'a') as file:
             file.write(f'{logId}\n')
 
-        triplet = triplet_key(request.headers.get('browserId'), request.client.host, serviceId)
+        # 生成三元组
+        triplet = triplet_key(user_agent, source_ip, serviceId)
         device_logs[triplet].append(logId)
 
         print(device_logs[triplet])
 
+        # 检查日志条目是否足够
         if len(device_logs[triplet]) <= window_size:
             return DeviceTrustLevelResponse(code="200", msg="日志条目不足", data={})
 
+        # 处理三元组日志
         process_triplet_logs(triplet)
+
         return DeviceTrustLevelResponse(code="200", msg="请求成功", data={})
+
     except ValueError as e:
         logger.error(f"URL解析失败: {e}")
         raise HTTPException(status_code=400, detail="无效的URL")
     except Exception as e:
         logger.error(f"处理日志条目时出错: {e}")
-        raise HTTPException(status_code=500, detail="内部服务器错误")
-
-
-# 新增接口，提供基于查询参数的评分信息返回
-@app.post("/TrustLevelResult", response_model=DeviceTrustLevelResponse)
-async def get_trust_level_result(
-        result_type: int = Query(None),  # 0: browserScore, 1: deviceScore, 2: serviceScore
-        startTime: str = Query(None),
-        endTime: str = Query(None)
-):
-    try:
-        # 初始化三个列表，用于存储结果
-        browser_scores = []
-        device_scores = []
-        service_scores = []
-
-        for triplet, logs in device_logs.items():
-            # 添加时间范围过滤逻辑，如果没有传入 startTime 和 endTime，默认返回所有数据
-            # 假设 logs 是保存了时间信息的日志数据结构
-            if startTime and endTime:
-                filtered_logs = [log for log in logs if startTime <= log['time'] <= endTime]
-            else:
-                filtered_logs = logs
-
-            for log in filtered_logs:
-                # 计算并加入相应的分数，假设分数是基于日志的某种计算逻辑
-                browser_scores.append({
-                    "browserId": triplet[0],
-                    "browserScore": "normal",  # 示例值，根据实际逻辑修改
-                    "time": log['time'],
-                    "returnTime": datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
-                })
-
-                device_scores.append({
-                    "deviceIp": triplet[1],
-                    "deviceScore": "normal",  # 示例值，根据实际逻辑修改
-                    "time": log['time'],
-                    "returnTime": datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
-                })
-
-                service_scores.append({
-                    "serviceId": triplet[2],
-                    "serviceScore": "normal",  # 示例值，根据实际逻辑修改
-                    "time": log['time'],
-                    "returnTime": datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
-                })
-
-        # 根据 result_type 返回指定的分数类型
-        if result_type is None:
-            return DeviceTrustLevelResponse(code="200", message="OK", data={
-                "browserScores": browser_scores,
-                "deviceScores": device_scores,
-                "serviceScores": service_scores
-            })
-        elif result_type == 0:
-            return DeviceTrustLevelResponse(code="200", message="OK", data={
-                "browserScores": browser_scores
-            })
-        elif result_type == 1:
-            return DeviceTrustLevelResponse(code="200", message="OK", data={
-                "deviceScores": device_scores
-            })
-        elif result_type == 2:
-            return DeviceTrustLevelResponse(code="200", message="OK", data={
-                "serviceScores": service_scores
-            })
-        else:
-            raise HTTPException(status_code=400, detail="无效的 result_type 参数，必须是 0, 1 或 2")
-    except Exception as e:
-        logger.error(f"查询信任等级时出错: {e}")
         raise HTTPException(status_code=500, detail="内部服务器错误")
 
 
@@ -158,9 +116,6 @@ def load_scores():
     except json.JSONDecodeError:
         raise HTTPException(status_code=500, detail="分数文件解析错误")
 
-
-# 创建 FastAPI 应用
-app = FastAPI()
 
 # 加载分数数据
 scores_data = load_scores()

@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 import time
 import os
 import json
-import requests  # Import requests library for sending HTTP requests
+import requests
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -9,6 +10,7 @@ log_file = "../result/output_log.txt"  # Log file to monitor
 log_file = os.path.abspath(log_file)  # Convert to absolute path
 
 API_URL = "http://localhost:8000/deviceTrustLevelModel"  # The API endpoint to send requests to
+
 
 # Custom event handler
 class LogHandler(FileSystemEventHandler):
@@ -42,15 +44,15 @@ class LogHandler(FileSystemEventHandler):
                         log_data = json.loads(entry)
 
                         data = {
-                            "browserId": log_data.get("browserId", ""),
-                            "logId": log_data.get("logId", ""),
-                            "deviceMac": log_data.get("deviceMac", ""),
-                            "deviceIp": log_data.get("deviceIp", ""),
-                            "accessPort": log_data.get("accessPort", 0),
-                            "serviceId": log_data.get("serviceId", ""),
-                            "accessedIp": log_data.get("accessedIp", ""),
-                            "rawLog": entry,  # Include the raw log entry
-                            "timestamp": log_data.get("timestamp", ""),
+                            "time_local": log_data.get("time_local", ""),
+                            "remote_addr": log_data.get("remote_addr", ""),
+                            "remote_user": log_data.get("remote_user", ""),
+                            "request": log_data.get("request", ""),
+                            "status": log_data.get("status", ""),
+                            "body_bytes_sent": log_data.get("body_bytes_sent", ""),
+                            "http_referer": log_data.get("http_referer", ""),
+                            "http_user_agent": log_data.get("http_user_agent", ""),
+                            "http_x_forwarded_for": log_data.get("http_x_forwarded_for", "")
                         }
 
                         # Send POST request to the API endpoint
@@ -65,6 +67,7 @@ class LogHandler(FileSystemEventHandler):
                         print(f"Failed to parse log entry as JSON: {entry}")
                     except Exception as e:
                         print(f"An error occurred: {e}")
+
 
 # Create observer and start
 observer = Observer()

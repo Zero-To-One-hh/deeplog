@@ -1,10 +1,42 @@
 {
     "/v1/app/list": {
-        "serviceId": 101,
+        "serviceId": 1,
         "logId": 11
     },
     "/v1/app/details": {
-        "serviceId": 102,
+        "serviceId": 1,
         "logId": 12
+    },
+    "/v1/app/update": {
+        "serviceId": 1,
+        "logId": 13
+    },
+    "/v1/app/delete": {
+        "serviceId": 1,
+        "logId": 14
+    },
+    "/v1/user/login": {
+        "serviceId": 2,
+        "logId": 15
+    },
+    "/v1/user/logout": {
+        "serviceId": 2,
+        "logId": 16
+    },
+    "/v1/user/register": {
+        "serviceId": 2,
+        "logId": 17
+    },
+    "/v1/user/profile": {
+        "serviceId": 2,
+        "logId": 18
+    },
+    "/v1/order/create": {
+        "serviceId": 3,
+        "logId": 19
+    },
+    "/v1/order/cancel": {
+        "serviceId": 3,
+        "logId": 20
     }
 }
