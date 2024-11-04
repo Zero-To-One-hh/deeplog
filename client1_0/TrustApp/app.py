@@ -1,49 +1,34 @@
+# app.py
 # -*- coding: utf-8 -*-
-import json
-import sys
 import datetime
-# 新增接口：基于时间查询信任等级
 from datetime import datetime
-from fastapi import FastAPI, HTTPException, Request, Query
+from fastapi import FastAPI, HTTPException, Query
 from collections import defaultdict, deque
-
-from h11._abnf import request_line
 from pydantic import BaseModel
 
-from models import DeviceTrustLevelRequest, DeviceTrustLevelResponse
+from models import DeviceTrustLevelResponse
 from config import config
 from logger import logger
-from database import load_scores, scores_lock, scores, save_scores
 from utils import triplet_key, adjust_scores, send_trust_level_result
 from prediction import predict_single_log
-from background_tasks import start_background_tasks
 from Parser import parse_url
-
-# 初始化分数并加载已有数据
-scores_data = load_scores()
-for entity_type in ['browsers', 'devices', 'services']:
-    scores[entity_type].update(scores_data.get(entity_type, {}))
-
-# 启动后台任务
-start_background_tasks()
+from TrustApp.forest.score_manager import scores_manager
 
 # 全局日志队列
 window_size = config['window_size']
 device_logs = defaultdict(lambda: deque(maxlen=window_size + 1))
 
-# 创建FastAPI应用
+# 创建 FastAPI 应用
 app = FastAPI()
-
 
 def process_triplet_logs(triplet):
     try:
         result = predict_triplet_log_sequence(triplet)
-        adjust_scores(triplet, result, scores)
-        send_trust_level_result(triplet, result, scores)
+        adjust_scores(triplet, result, scores_manager)
+        send_trust_level_result(triplet, result, scores_manager)
     except Exception as e:
         logger.error(f"处理三元组日志时出错: {e}")
         raise
-
 
 def predict_triplet_log_sequence(triplet):
     try:
@@ -53,7 +38,6 @@ def predict_triplet_log_sequence(triplet):
     except Exception as e:
         logger.error(f"预测三元组日志序列时出错: {e}")
         raise HTTPException(status_code=500, detail="预测失败")
-
 
 class LogEntry(BaseModel):
     time_local: str
@@ -65,7 +49,6 @@ class LogEntry(BaseModel):
     http_referer: str
     http_user_agent: str
     http_x_forwarded_for: str
-
 
 @app.post("/deviceTrustLevelModel", response_model=DeviceTrustLevelResponse)
 async def process_log_entry(request: LogEntry):
@@ -105,29 +88,14 @@ async def process_log_entry(request: LogEntry):
         logger.error(f"处理日志条目时出错: {e}")
         raise HTTPException(status_code=500, detail="内部服务器错误")
 
-
-SCORES_FILE_PATH = "config/scores.json"
-
-
-def load_scores():
-    try:
-        with open(SCORES_FILE_PATH, 'r') as file:
-            return json.load(file)
-    except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="分数文件未找到")
-    except json.JSONDecodeError:
-        raise HTTPException(status_code=500, detail="分数文件解析错误")
-
-
-# 加载分数数据
-scores_data = load_scores()
-
-
 @app.post("/TrustLevelResult", response_model=dict)
 async def get_trust_level_result(
         result_type: int = Query(None),  # 0: browserScore, 1: deviceScore, 2: serviceScore
 ):
     try:
+        # 获取当前分数
+        scores_data = scores_manager.get_scores()
+
         # 初始化三个列表，用于存储结果
         browser_scores = []
         device_scores = []
@@ -189,13 +157,15 @@ async def get_trust_level_result(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"内部服务器错误: {e}")
 
-
 @app.post("/TrustLevelByTime", response_model=dict)
 async def get_trust_level_by_time(
         start_time: str = Query(None),
         end_time: str = Query(None),
 ):
     try:
+        # 获取当前分数
+        scores_data = scores_manager.get_scores()
+
         # 如果提供了起始时间和结束时间，则转换为 datetime 对象
         start_dt = datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S") if start_time else None
         end_dt = datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S") if end_time else None
@@ -252,16 +222,13 @@ async def get_trust_level_by_time(
         logger.error(f"处理时间查询请求时出错: {e}")
         raise HTTPException(status_code=500, detail=f"内部服务器错误: {e}")
 
-
 # 应用关闭时保存分数
 @app.on_event("shutdown")
 def on_shutdown():
-    save_scores()
+    scores_manager.save_scores()
     logger.info("程序关闭，分数已保存。")
-
 
 # 主程序入口
 if __name__ == "__main__":
     import uvicorn
-
     uvicorn.run(app, host="localhost", port=8000)

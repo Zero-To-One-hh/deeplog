@@ -1,3 +1,4 @@
+# main.py
 # -*- coding: utf-8 -*-
 import requests
 import json
@@ -5,12 +6,10 @@ import time
 from datetime import datetime
 from process_data import process_data
 
-
 def load_config():
     with open('../config/config.json', 'r') as f:
         config = json.load(f)
     return config
-
 
 def fetch_data(config):
     params = {}
@@ -35,7 +34,6 @@ def fetch_data(config):
         print(f"Error fetching data: {e}")
         return []
 
-
 def schedule_task(config):
     interval = config.get('schedule_interval', 5)
     while True:
@@ -43,7 +41,6 @@ def schedule_task(config):
         for data_item in data_list:
             process_data(data_item, config)
         time.sleep(interval)
-
 
 if __name__ == "__main__":
     config = load_config()
