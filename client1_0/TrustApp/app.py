@@ -2,6 +2,8 @@
 import json
 import sys
 import datetime
+# 新增接口：基于时间查询信任等级
+from datetime import datetime
 from fastapi import FastAPI, HTTPException, Request, Query
 from collections import defaultdict, deque
 
@@ -185,6 +187,69 @@ async def get_trust_level_result(
         else:
             raise HTTPException(status_code=400, detail="无效的 result_type 参数，必须是 0, 1 或 2")
     except Exception as e:
+        raise HTTPException(status_code=500, detail=f"内部服务器错误: {e}")
+
+
+@app.post("/TrustLevelByTime", response_model=dict)
+async def get_trust_level_by_time(
+        start_time: str = Query(None),
+        end_time: str = Query(None),
+):
+    try:
+        # 如果提供了起始时间和结束时间，则转换为 datetime 对象
+        start_dt = datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S") if start_time else None
+        end_dt = datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S") if end_time else None
+
+        # 初始化结果列表
+        result_list = []
+
+        # 获取并处理浏览器评分
+        for browser_id, data in scores_data.get('browsers', {}).items():
+            last_reset_dt = datetime.strptime(data["last_reset"], "%Y-%m-%d %H:%M:%S")
+            if (not start_dt or start_dt <= last_reset_dt) and (not end_dt or last_reset_dt <= end_dt):
+                result_list.append({
+                    "uuid": browser_id,
+                    "type": "browser",
+                    "id": browser_id,
+                    "score": data["score"],
+                    "last_reset": data["last_reset"]
+                })
+
+        # 获取并处理设备评分
+        for device_id, data in scores_data.get('devices', {}).items():
+            last_reset_dt = datetime.strptime(data["last_reset"], "%Y-%m-%d %H:%M:%S")
+            if (not start_dt or start_dt <= last_reset_dt) and (not end_dt or last_reset_dt <= end_dt):
+                result_list.append({
+                    "uuid": device_id,
+                    "type": "device",
+                    "id": device_id,
+                    "score": data["score"],
+                    "last_reset": data["last_reset"]
+                })
+
+        # 获取并处理服务评分
+        for service_id, data in scores_data.get('services', {}).items():
+            last_reset_dt = datetime.strptime(data["last_reset"], "%Y-%m-%d %H:%M:%S")
+            if (not start_dt or start_dt <= last_reset_dt) and (not end_dt or last_reset_dt <= end_dt):
+                result_list.append({
+                    "uuid": service_id,
+                    "type": "service",
+                    "id": service_id,
+                    "score": data["score"],
+                    "last_reset": data["last_reset"]
+                })
+
+        # 返回查询结果
+        return {
+            "code": "200",
+            "message": "OK",
+            "data": result_list
+        }
+    except ValueError as e:
+        logger.error(f"时间参数解析失败: {e}")
+        raise HTTPException(status_code=400, detail="无效的时间参数格式，应为 'YYYY-MM-DD HH:MM:SS'")
+    except Exception as e:
+        logger.error(f"处理时间查询请求时出错: {e}")
         raise HTTPException(status_code=500, detail=f"内部服务器错误: {e}")
 
 

@@ -13,7 +13,7 @@ class MacRiskMonitor(threading.Thread):
         self.scores = scores
         self.scores_lock = scores_lock
         self.config = config
-        self.interval = config.get('api_request_interval_seconds', 300)
+        self.interval = config.get('api_request_interval_seconds', 60)
         self.api_url = "http://127.0.0.1:8089/apispace/public/snort/list/bytime"
 
     def run(self):
@@ -26,7 +26,7 @@ class MacRiskMonitor(threading.Thread):
 
     def check_risk_macs(self):
         end_time = datetime.datetime.now()
-        start_time = end_time - datetime.timedelta(minutes=5)  # 查询过去5分钟的数据
+        start_time = end_time - datetime.timedelta(minutes=1)  # 查询过去1分钟的数据
         params = {
             'startTime': start_time.strftime("%Y-%m-%d %H:%M:%S"),
             'endTime': end_time.strftime("%Y-%m-%d %H:%M:%S"),
@@ -39,6 +39,7 @@ class MacRiskMonitor(threading.Thread):
                     data = response.json()
                     if data.get('code') == 1:
                         self.process_risk_data(data.get('data', []))
+                        logger.info("获取数据成功")
                     else:
                         logger.error(f"API返回错误：{data.get('message')}")
                 else:

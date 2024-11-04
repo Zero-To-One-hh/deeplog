@@ -1,8 +1,8 @@
 {
     "decrements": {
-        "browserScore": 2,
-        "deviceScore": 1,
-        "serviceScore": 3
+        "browserScore": 0.02,
+        "deviceScore": 0.01,
+        "serviceScore": 0.03
     },
     "reset_interval_seconds": 10800,
     "window_size": 10,
@@ -27,5 +27,24 @@
     "model_name": "deeplog",
     "save_dir": "./result/deeplog2024_06_15/",
     "model_path": "../deeplog2024_06_15/deeplog_bestloss.pth",
-    "num_candidates": 9
+    "num_candidates": 9,
+    "api_endpoint": "http://127.0.0.1:8000/apispace/public/snort/list/bytime",
+    "start_time": "",
+    "end_time": "",
+    "count": 10000,
+    "schedule_interval": 5,
+    "risk_levels": {
+        "High": {
+            "messages": ["ICMP Traffic Detected", "Other High Risk Message"],
+            "score_decrement": 0.09
+        },
+        "Medium": {
+            "messages": ["Medium Risk Message"],
+            "score_decrement": 0.04
+        },
+        "Low": {
+            "messages": ["Low Risk Message"],
+            "score_decrement": 0.01
+        }
+    }
 }
