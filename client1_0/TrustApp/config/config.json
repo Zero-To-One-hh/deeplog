@@ -1,8 +1,8 @@
 {
     "decrements": {
-        "browserScore": 0.02,
-        "deviceScore": 0.01,
-        "serviceScore": 0.03
+        "browserScore": 0.2,
+        "deviceScore": 0.1,
+        "serviceScore": 0.3
     },
     "reset_interval_seconds": 10800,
     "window_size": 10,
@@ -28,7 +28,7 @@
     "save_dir": "./result/deeplog2024_06_15/",
     "model_path": "../deeplog2024_06_15/deeplog_bestloss.pth",
     "num_candidates": 9,
-    "api_endpoint": "http://127.0.0.1:8000/apispace/public/snort/list/bytime",
+    "api_endpoint": "http://127.0.0.1:8003/apispace/public/snort/list/bytime",
     "start_time": "",
     "end_time": "",
     "count": 10000,

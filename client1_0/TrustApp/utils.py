@@ -1,49 +1,44 @@
+# utils.py
 # -*- coding: utf-8 -*-
 import datetime
 import httpx
 from logger import logger
 from config import config
-from database import scores_lock
+from TrustApp.score_manager import scores_manager  # 导入 scores_manager
 
 def triplet_key(browserId, deviceMac, serviceId):
     return (browserId, deviceMac, serviceId)
 
-def adjust_scores(triplet, result, scores):
-    with scores_lock:
-        current_time = datetime.datetime.now()
-        reset_interval_seconds = config.get('reset_interval_seconds', 3 * 3600)
+def adjust_scores(triplet, result):
+    browserId, deviceMac, serviceId = triplet
 
-        browserId, deviceMac, serviceId = triplet
+    # 如果检测到异常，减少对应的分数
+    if result == "Anomaly":
+        decrement_browser = config.get('decrements', {}).get('browserScore', 1)
+        decrement_device = config.get('decrements', {}).get('deviceScore', 1)
+        decrement_service = config.get('decrements', {}).get('serviceScore', 1)
 
-        for entity_type, entity_id in [('browsers', browserId), ('devices', deviceMac), ('services', serviceId)]:
-            entity_scores = scores[entity_type]
-            last_reset = entity_scores[entity_id]['last_reset']
-            if (current_time - last_reset).total_seconds() >= reset_interval_seconds:
-                entity_scores[entity_id]['score'] = 100
-                entity_scores[entity_id]['last_reset'] = current_time
-            # 如果检测到异常，则降低分数
-            if result == "Anomaly":
-                decrement = config.get('decrements', {}).get(f"{entity_type[:-1]}Score", 1)
-                entity_scores[entity_id]['score'] = max(0, entity_scores[entity_id]['score'] - decrement)
-        # 分数的保存由后台任务处理
+        scores_manager.update_browser_score(browserId, decrement_browser)
+        scores_manager.update_device_score(deviceMac, decrement_device)
+        scores_manager.update_service_score(serviceId, decrement_service)
 
-def send_trust_level_result(triplet, result, scores):
+def send_trust_level_result(triplet, result):
     callback_url = "http://localhost:8067/deviceTrustLevelResult"
     browserId, deviceMac, serviceId = triplet
 
-    current_scores = {
-        'browserScore': scores['browsers'][browserId]['score'],
-        'deviceScore': scores['devices'][deviceMac]['score'],
-        'serviceScore': scores['services'][serviceId]['score']
-    }
+    current_scores = scores_manager.get_scores()
+
+    browser_score = current_scores['browsers'].get(browserId, {}).get('score', 100)
+    device_score = current_scores['devices'].get(deviceMac, {}).get('score', 100)
+    service_score = current_scores['services'].get(serviceId, {}).get('score', 100)
 
     callback_data = {
         "browserId": browserId,
         "deviceMac": deviceMac,
         "serviceId": serviceId,
-        "browserScore": current_scores['browserScore'],
-        "deviceScore": current_scores['deviceScore'],
-        "serviceScore": current_scores['serviceScore'],
+        "browserScore": browser_score,
+        "deviceScore": device_score,
+        "serviceScore": service_score,
         "result": result
     }
     try:

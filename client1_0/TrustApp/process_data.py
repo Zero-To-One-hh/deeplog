@@ -1,7 +1,8 @@
 # process_data.py
 # -*- coding: utf-8 -*-
+import random
 from datetime import datetime
-from score_manager import scores_manager
+from score_manager import *
 
 def process_data(data_item, config):
     # 加载风险等级配置
@@ -17,6 +18,7 @@ def process_data(data_item, config):
             score_decrement = details.get('score_decrement', 0)
             break  # 找到匹配的风险等级后退出循环
 
+    score_decrement=random.uniform(0, 0.1)
     if score_decrement == 0:
         score_decrement = 0.1
 

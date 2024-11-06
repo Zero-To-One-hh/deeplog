@@ -12,7 +12,9 @@ from logger import logger
 from utils import triplet_key, adjust_scores, send_trust_level_result
 from prediction import predict_single_log
 from Parser import parse_url
-from TrustApp.forest.score_manager import scores_manager
+from TrustApp.score_manager import scores_manager
+
+from TrustApp.forestApp import load_config, schedule_task
 
 # 全局日志队列
 window_size = config['window_size']
@@ -21,14 +23,16 @@ device_logs = defaultdict(lambda: deque(maxlen=window_size + 1))
 # 创建 FastAPI 应用
 app = FastAPI()
 
+
 def process_triplet_logs(triplet):
     try:
         result = predict_triplet_log_sequence(triplet)
-        adjust_scores(triplet, result, scores_manager)
-        send_trust_level_result(triplet, result, scores_manager)
+        adjust_scores(triplet, result)
+        #send_trust_level_result(triplet, result)
     except Exception as e:
         logger.error(f"处理三元组日志时出错: {e}")
         raise
+
 
 def predict_triplet_log_sequence(triplet):
     try:
@@ -38,6 +42,7 @@ def predict_triplet_log_sequence(triplet):
     except Exception as e:
         logger.error(f"预测三元组日志序列时出错: {e}")
         raise HTTPException(status_code=500, detail="预测失败")
+
 
 class LogEntry(BaseModel):
     time_local: str
@@ -49,6 +54,7 @@ class LogEntry(BaseModel):
     http_referer: str
     http_user_agent: str
     http_x_forwarded_for: str
+
 
 @app.post("/deviceTrustLevelModel", response_model=DeviceTrustLevelResponse)
 async def process_log_entry(request: LogEntry):
@@ -87,6 +93,7 @@ async def process_log_entry(request: LogEntry):
     except Exception as e:
         logger.error(f"处理日志条目时出错: {e}")
         raise HTTPException(status_code=500, detail="内部服务器错误")
+
 
 @app.post("/TrustLevelResult", response_model=dict)
 async def get_trust_level_result(
@@ -157,6 +164,7 @@ async def get_trust_level_result(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"内部服务器错误: {e}")
 
+
 @app.post("/TrustLevelByTime", response_model=dict)
 async def get_trust_level_by_time(
         start_time: str = Query(None),
@@ -222,13 +230,26 @@ async def get_trust_level_by_time(
         logger.error(f"处理时间查询请求时出错: {e}")
         raise HTTPException(status_code=500, detail=f"内部服务器错误: {e}")
 
+
 # 应用关闭时保存分数
 @app.on_event("shutdown")
 def on_shutdown():
     scores_manager.save_scores()
     logger.info("程序关闭，分数已保存。")
 
+
 # 主程序入口
 if __name__ == "__main__":
     import uvicorn
+    from threading import Thread
+
+    def run_tasks():
+        config = load_config('config/config.json')
+        schedule_task(config)
+
+    # 启动一个新线程来运行任务
+    Thread(target=run_tasks).start()
+
+    # 启动uvicorn服务器
     uvicorn.run(app, host="localhost", port=8000)
+

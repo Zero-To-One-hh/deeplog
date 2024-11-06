@@ -95,7 +95,7 @@ def get_snort_data():
         filtered_data = []
         for item in sample_data:
             event_time = datetime.fromtimestamp(int(item['seconds']))
-            if start_time <= event_time <= end_time:
+            if True:
                 filtered_data.append(item)
                 if len(filtered_data) >= count:
                     break
@@ -110,4 +110,4 @@ def get_snort_data():
 
 if __name__ == '__main__':
     # 运行Flask应用，监听所有公网IP地址的8000端口
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8003)
