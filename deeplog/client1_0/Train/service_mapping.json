@@ -1,0 +1,11 @@
+{
+    "service1": [
+        "/api/v1/resource",
+        "/api/v1/status",
+        "/api/v1/user"
+    ],
+    "service2": [
+        "/api/v1/login",
+        "/api/v1/data"
+    ]
+}

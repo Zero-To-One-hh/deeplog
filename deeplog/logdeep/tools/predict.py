@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import gc
-import os
 import sys
 import time
 from collections import Counter
@@ -10,17 +8,13 @@ from collections import Counter
 sys.path.append('../../')
 
 import numpy as np
-import pandas as pd
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from logdeep.dataset.log import log_dataset
 from logdeep.dataset.sample import session_window
-from logdeep.tools.utils import (save_parameters, seed_everything,
-                                 train_val_split)
 
 
 def generate(name):

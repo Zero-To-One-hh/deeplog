@@ -1,6 +1,5 @@
-import os
 import pandas as pd
-import numpy as np
+
 para = {"window_size":0.5,"step_size":0.2,"structured_file":"./result/messages.log_structured.csv","Log_sequence":'./result/messages_sequence.csv'}
 
 # 定义月份映射字典

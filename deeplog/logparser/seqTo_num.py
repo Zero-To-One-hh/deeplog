@@ -1,7 +1,8 @@
 #再次处理序列化文件
 
-import pandas as pd
 import re
+
+import pandas as pd
 
 # 定义CSV文件的路径
 file_path = './result/messages_sequence.csv'

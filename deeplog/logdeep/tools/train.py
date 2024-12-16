@@ -15,8 +15,7 @@ from tqdm import tqdm
 
 from logdeep.dataset.log import log_dataset
 from logdeep.dataset.sample import sliding_window, session_window
-from logdeep.tools.utils import (save_parameters, seed_everything,
-                                 train_val_split)
+from logdeep.tools.utils import (save_parameters)
 
 
 class Trainer():

@@ -6,7 +6,7 @@ import sys
 
 sys.path.append('../')
 
-from logdeep.models.lstm import deeplog, loganomaly, robustlog
+from logdeep.models.lstm import deeplog
 from logdeep.tools.predict import Predicter
 from logdeep.tools.train import Trainer
 from logdeep.tools.utils import *
@@ -47,8 +47,6 @@ options['lr'] = 0.001
 options['max_epoch'] = 370
 options['lr_step'] = (300, 350)
 options['lr_decay_ratio'] = 0.1
-
-import time
 
 # str=time.strftime('%Y_%m_%d', time.localtime())
 str = "2024_06_15"

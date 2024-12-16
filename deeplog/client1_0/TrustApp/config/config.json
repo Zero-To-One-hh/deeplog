@@ -1,0 +1,51 @@
+{
+    "score_decrement_ratio": 0.5,
+    "decrements": {
+        "browserScore": 0.2,
+        "deviceScore": 0.1,
+        "serviceScore": 0.3
+    },
+    "reset_interval_seconds": 10800,
+    "window_size": 10,
+    "device": "cpu",
+    "sample": "sliding_window",
+    "sequentials": true,
+    "quantitatives": false,
+    "semantics": false,
+    "feature_num": 1,
+    "input_size": 1,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "num_classes": 676,
+    "batch_size": 2048,
+    "accumulation_step": 1,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "max_epoch": 370,
+    "lr_step": [300, 350],
+    "lr_decay_ratio": 0.1,
+    "resume_path": null,
+    "model_name": "deeplog",
+    "save_dir": "C:/Users/DELL/Desktop/aerolog/client1_0/deeplog2024_06_15",
+    "model_path": "../deeplog2024_06_15/deeplog_bestloss.pth",
+    "num_candidates": 9,
+    "api_endpoint": "http://172.20.10.2:10671/apispace/flow/list/bytime",
+    "start_time": "",
+    "end_time": "",
+    "count": 10000,
+    "schedule_interval": 15,
+    "risk_levels": {
+        "High": {
+            "messages": ["ICMP Traffic Detected", "Other High Risk Message"],
+            "score_decrement": 0.09
+        },
+        "Medium": {
+            "messages": ["Medium Risk Message"],
+            "score_decrement": 0.04
+        },
+        "Low": {
+            "messages": ["Low Risk Message"],
+            "score_decrement": 0.01
+        }
+    }
+}

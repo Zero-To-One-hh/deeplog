@@ -1,0 +1,7 @@
+{
+    "/api/v1/resource": 1,
+    "/api/v1/user": 2,
+    "/api/v1/status": 3,
+    "/api/v1/data": 4,
+    "/api/v1/login": 5
+}
